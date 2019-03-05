@@ -1,0 +1,11 @@
+{
+	"name": "Project",
+	"alias": "Project",
+	"description": "projects",
+	"authors": {
+		"name": "",
+		"email": ""
+	},
+	"type": "dev",
+	"version": "0.0.0"
+}

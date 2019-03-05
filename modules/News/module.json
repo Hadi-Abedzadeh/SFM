@@ -1,0 +1,11 @@
+{
+	"name": "News",
+	"alias": "News",
+	"description": "News Module",
+	"authors": {
+		"name": "",
+		"email": ""
+	},
+	"type": "dev",
+	"version": "0.0.0"
+}

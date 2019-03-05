@@ -1,0 +1,11 @@
+{
+	"name": "Faq",
+	"alias": "Faq",
+	"description": "faq",
+	"authors": {
+		"name": "",
+		"email": ""
+	},
+	"type": "dev",
+	"version": "0.0.0"
+}

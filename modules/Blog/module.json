@@ -1,0 +1,11 @@
+{
+	"name": "Blog",
+	"alias": "Blog",
+	"description": "blog",
+	"authors": {
+		"name": "",
+		"email": ""
+	},
+	"type": "dev",
+	"version": "0.0.0"
+}
