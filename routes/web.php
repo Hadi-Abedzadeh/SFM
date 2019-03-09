@@ -22,9 +22,6 @@
 
 app()->setLocale('fa');
 
-//$locale = app()->getLocale();
-
-
 require_once(base_path('load_modules.php'));
 
 
@@ -43,10 +40,8 @@ Route::get('/lang/{lang}', function ($lang) {
 
     \Illuminate\Support\Facades\Request::session()->put('lang', $select_lang);
 
-
     return redirect(route('frontend'));
 });
-
 
 Route::get('/', function () {
 
@@ -55,7 +50,7 @@ Route::get('/', function () {
     $news = \Modules\News\Models\News::whereLang($locale)->orderBy('id', 'DESC')->limit(3)->get();
 
     if ($locale == 'fa') {
-        $products = \Modules\Product\Models\Product::limit(env('PAGINATE_COUNT'))->get();
+        $products = \Modules\Product\Models\Product::whereLang('fa')->limit(env('PAGINATE_COUNT'))->get();
         return view(env('THEME_NAME') . '.frontend-fa.frontend-index', compact('contact', 'news', 'products'));
     } else {
         return view(env('THEME_NAME') . '.frontend.frontend-index', compact('contact', 'news'));
@@ -63,17 +58,15 @@ Route::get('/', function () {
 
 })->name('frontend');
 
-
 Route::prefix('backend')->middleware('auth')->group(function () {
     Route::resource('/contact-us', 'backend\BackendContactController');
-//    Route::post('/contact-us/update', 'backend\BackendController@contact_update')->name('backend.contact.update');
+    // Route::post('/contact-us/update', 'backend\BackendController@contact_update')->name('backend.contact.update');
 
     // upload ckeditor
     Route::post('/upload-image/{module_name}/{folder_name}', 'backend\BackendController@upload_image')->name('backend.ckeditor.upload_image');
 
     Route::resource('/about-us', 'backend\AboutController');
     Route::resource('/faq', 'backend\FAQController');
-
 
 });
 

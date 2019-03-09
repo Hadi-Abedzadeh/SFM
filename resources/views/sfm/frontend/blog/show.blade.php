@@ -33,3 +33,8 @@
 
     </div>
 @endsection
+
+
+@section('title')
+	Blog {{$post->title}}
+@endsection

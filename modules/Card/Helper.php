@@ -28,7 +28,7 @@ class Helper
             <div class='productcontent'>
                 <h1>$card->title</h1>
                 <p>$card->body</p>
-                <a href='#' class='btn'>VIEW MORE</a>
+                <a href='".route('frontend.about.index')."' class='btn'>VIEW MORE</a>
             </div>";
         }
     }
@@ -47,7 +47,7 @@ class Helper
                         <p>
                         $card->body
                         </p>
-                        <a href=\"#\">اطلاعات بیشتر</a>
+                        <a href=\"". route('frontend.about.index') ."\">اطلاعات بیشتر</a>
                     </div>
                     <div class=\"thumbnail tekoonbede\">
                         <img src=\"/sfm-fa/assets/images/sample/Product-head.png\" alt=\"\" title=\"\">
@@ -62,11 +62,12 @@ class Helper
     {
         $cards = Card::wherePage_id($id)->whereActive(1)->get();
         foreach ($cards as $card) {
-            echo "<div class='product'>
+            echo "<a href='$card->slug'>
+                   <div class='product'>
                     <div class='productthumb'><img src='$card->imgUrl' draggable='false'></div>
                     <div class='producttitle'>$card->title</div>
-                    <a href='#' class='productmore'>VIEW MORE</a>
-                </div>";
+                    <span class='productmore'>VIEW MORE</span>
+                </div></a>";
         }
     }
 

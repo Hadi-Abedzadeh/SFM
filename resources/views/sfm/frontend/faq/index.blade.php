@@ -5,6 +5,7 @@
         <div class="col-md-12">
             <article class="art-content-faq">
                 <header>
+
                                         <span class="bdi-bg-c">
                                             <i class="num">{{ $loop->iteration  }}</i>
                                             <i class="mi"></i>
@@ -15,4 +16,9 @@
             </article>
         </div>
     @endforeach
+@endsection
+
+
+@section('title')
+	FAQ
 @endsection

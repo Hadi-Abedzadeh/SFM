@@ -3,7 +3,7 @@
 <head>
 
     <meta charset="utf-8">
-    <title>SFM</title>
+    <title>SFM | @yield('title')</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="description" content="">

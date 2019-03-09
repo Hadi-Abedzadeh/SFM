@@ -58,13 +58,13 @@ class FrontendModuleProductController extends Controller
     public function show($product_list)
     {
         $locale = set_lang();
-        if ($locale == 'en') {
-            $product = Product::whereSlug($product_list)->first();
-            return view(env('THEME_NAME') . '.frontend.product.show', compact('product'));
-        }else{
+        $product_list = Product_list::whereSlug($product_list)->whereLang($locale)->first();
+        $same_products = Product_list::whereProduct_id($product_list->product_id)->whereLang($locale)->get();
 
-            $product_list = Product_list::whereSlug($product_list)->first();
-            return view(env('THEME_NAME') . '.frontend-fa.product.show', compact('product'));
+        if ($locale == 'en') {
+            return view(env('THEME_NAME') . '.frontend.product.show', compact('product_list', 'same_products'));
+        }else{
+            return view(env('THEME_NAME') . '.frontend-fa.product.show', compact('product_list', 'same_products'));
 
         }
     }
@@ -106,6 +106,15 @@ class FrontendModuleProductController extends Controller
     public function catalog($slug)
     {
 
+        $locale = set_lang();
+        if($locale == 'fa'){
+
+            $product = Product::whereSlug($slug)->first();
+            $products = Product_list::whereProduct_id($product->id)->get();
+            $category = $product->title;
+            return view(env('THEME_NAME').'.frontend-fa.product.catalog', compact('products', 'category'));
+
+        }
         return Product_list::whereSlug($slug)->get();
 
         $product_id = $product_list->product_id;

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="320px" height="202px" viewBox="0 0 320 202" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>map-obj-responsiv</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M6.82121026e-13,20.5902004 L6.82121026e-13,182.5902 C53.3333333,195.923534 106.666667,202.5902 160,202.5902 C213.333333,202.5902 266.666667,195.923534 320,182.5902 L320,20.5902004 C266.666667,7.25686711 213.333333,0.590200445 160,0.590200445 C106.666667,0.590200445 53.3333333,7.25686711 6.82121026e-13,20.5902004 Z" id="path-1"></path>
+    </defs>
+    <g id="Pages" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Mobile" transform="translate(0.000000, -569.000000)">
+            <g id="Group-4" transform="translate(0.000000, 308.000000)">
+                <g id="Footer">
+                    <g id="Group" transform="translate(0.000000, 0.409800)">
+                        <g id="Group-8">
+                            <g id="Screen-Shot-2019-01-30-at-9.26.22-AM" transform="translate(0.000000, 260.000000)">
+                                <mask id="mask-2" fill="white">
+                                    <use xlink:href="#path-1"></use>
+                                </mask>
+                                <use id="map-obj-responsiv" fill="#D8D8D8" fill-rule="nonzero" xlink:href="#path-1"></use>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

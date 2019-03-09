@@ -1,6 +1,7 @@
 @extends(env('THEME_NAME').'.layouts.frontend')
 
 @section('content')
+<div class="container-fluid">
 
 
     <div class="infinite-scroll">
@@ -27,6 +28,7 @@
             {{ $blog_posts->links() }}
         </div>
     </div>
+    </div>
 @endsection
 
 @section('infiniteScroll')
@@ -49,4 +51,9 @@
         });
     </script>
 
+@endsection
+
+
+@section('title')
+	Blog
 @endsection

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1600px" height="135px" viewBox="0 0 1600 135" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>Mask 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M1600,0 L-1.29602995e-11,0 L4.93400876e-11,130 C524.333333,60.3333333 887,49 1088,96 C1289,143 1459.66667,147.166667 1600,108.5 L1600,0 Z" id="path-1"></path>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Header">
+            <g id="Group-2">
+                <g id="Header">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Mask-2" fill="#E92222" fill-rule="nonzero" transform="translate(800.000000, 67.339494) scale(-1, 1) translate(-800.000000, -67.339494) " xlink:href="#path-1"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

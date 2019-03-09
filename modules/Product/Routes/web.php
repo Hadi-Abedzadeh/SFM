@@ -12,4 +12,4 @@ Route::prefix('backend')->middleware('auth')->group(function () {
 
 Route::get('/products', 'frontend\FrontendModuleProductController@index')->name('frontend.product.index');
 Route::get('/product/catalog/{Slugproduct_list}', 'frontend\FrontendModuleProductController@catalog')->name('frontend.product.catalog');
-Route::get('/product/show/{Slugproduct_list}', 'frontend\FrontendModuleProductController@show')->name('frontend.product.show');
+Route::get('/product/show/{product_list}', 'frontend\FrontendModuleProductController@show')->name('frontend.product.show');

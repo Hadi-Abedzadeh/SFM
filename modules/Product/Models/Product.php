@@ -11,4 +11,6 @@ class Product extends Model
         return $this->belongsTo(Product_list::class);
 
     }
+
+
 }

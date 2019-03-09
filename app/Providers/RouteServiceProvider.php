@@ -6,6 +6,7 @@ use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvi
 use Illuminate\Support\Facades\Route;
 use Modules\Blog\Models\Category;
 use Modules\Blog\Models\Post;
+use Modules\Product\Models\Product;
 
 class RouteServiceProvider extends ServiceProvider
 {

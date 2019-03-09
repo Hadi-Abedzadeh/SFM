@@ -26,16 +26,25 @@ class FrontendModuleBlogController extends Controller
 
     public function show($post)
     {
+        $locale = set_lang();
+
         if (isset($post->categories[0]->pivot)) {
-        $category = $post->categories;
+            $category = $post->categories;
             $category_id = $category[0]->pivot->category_id;
             $category_id = DB::table('category_post')->whereCategory_id($category_id)->get();
             foreach ($category_id as $c) {
-                $similar[] = Post::whereId($c->post_id)->limit(7)->get();
+                $similar[] = Post::whereId($c->post_id)->whereLang($locale)->limit(7)->get();
             }
+        }else {
+            $similar = Post::limit(3)->whereLang($locale)->get();
         }
 
-        return view(env('THEME_NAME') . '.frontend.blog.show', compact('post', 'similar'));
+        if($locale == 'en'){
+            return view(env('THEME_NAME') . '.frontend.blog.show', compact('post', 'similar'));
+        }else{
+            return view(env('THEME_NAME') . '.frontend-fa.blog.show', compact('post', 'similar'));
+        }
+
     }
 
     public function category($category)

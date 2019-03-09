@@ -4,10 +4,16 @@
     <div class="fixedleftplus"></div>
     <div class="fixedright"></div>
     <div class="fixedrightplus"></div>
-    <div class="footermap"><img src="/{{env('THEME_NAME')}}/assets/images/map.jpg"></div>
+    <div class="footermap"><img src="images/map.jpg"></div>
 </div>
 <nav>
-    <a class="logo" href="#"></a>
+    <a class="logo" href="index.php"></a>
+	<div class="navside">
+	<div class="langchoose">
+	<a class="active"><span>EN</span><div class="flagen"></div></a>
+	<a class="active"><span>EN</span><div class="flagen"></div></a>
+	<a href="/lang/fa"><span>IR</span><div class="flagfa"></div></a>
+	</div>
     <div class="menu noselect">
         <div class="menu-text"><span>MENU</span><span>CLOSE</span></div>
         <div class="menu-icon">
@@ -16,6 +22,8 @@
             <span></span>
         </div>
     </div>
+    </div>
+<div class="background"></div>
 </nav>
 <div id="scrolldown">
     <div class="scroll-icon"></div>
@@ -25,7 +33,7 @@
 <div id="fullmenu">
     <div class="fullmenulink">
         <a href="{{ route('frontend.about.index') }}">ABOUT</a>
-        <a href="#">CATALOGE</a>
+        <a href="{{ route('catalog') }}">CATALOGE</a>
         <a href="{{ route('frontend.product.index') }}">PRODUCT</a>
         <a href="{{ route('frontend.blog.index') }}">BLOG</a>
         <a href="{{ route('frontend.news.index') }}">NEWS</a>

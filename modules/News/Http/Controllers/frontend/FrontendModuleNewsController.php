@@ -17,7 +17,6 @@ class FrontendModuleNewsController extends Controller
     {
         $locale = set_lang();
         $news = News::whereLang($locale)->orderBy('id', 'desc')->paginate(env('PAGINATE_COUNT'));
-
         if($locale == 'en'){
             return view(env('THEME_NAME') . '.frontend.news.index', compact('news'));
         }else{
@@ -56,8 +55,16 @@ class FrontendModuleNewsController extends Controller
      */
     public function show($slug)
     {
-        $news = News::whereSlug($slug)->first();
-        return view(env('THEME_NAME'). '.frontend.news.show', compact('news'));
+        News::whereSlug($slug)->increment('viewCount', 1);
+        $locale = set_lang();
+        if($locale == 'en'){
+            $news = News::whereSlug($slug)->whereLang($locale)->firstOrFail();
+            return view(env('THEME_NAME'). '.frontend.news.show', compact('news'));
+        }else{
+            $news = News::whereSlug($slug)->whereLang($locale)->firstOrFail();
+            return view(env('THEME_NAME'). '.frontend-fa.news.show', compact('news'));
+
+        }
     }
 
     /**

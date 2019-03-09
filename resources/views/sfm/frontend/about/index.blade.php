@@ -13,3 +13,8 @@
         </div>
     </div>
 @endsection
+
+
+@section('title')
+	About
+@endsection

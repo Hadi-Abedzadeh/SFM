@@ -2,7 +2,7 @@
 <html class="areapage">
 <head>
     <meta charset="utf-8">
-    <title>SFM</title>
+    <title>SFM | @yield('title')</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="description" content="">
@@ -17,7 +17,12 @@
 </head>
 <body>
 <nav>
-    <a class="logo" href="#"></a>
+    <a class="logo" href="index.php"></a>
+	<div class="navside">
+	<div class="langchoose">
+	<a class="active"><span>EN</span><div class="flagen"></div></a>
+	<a href="/lang/fa"><span>IR</span><div class="flagfa"></div></a>
+	</div>
     <div class="menu noselect">
         <div class="menu-text"><span>MENU</span><span>CLOSE</span></div>
         <div class="menu-icon">
@@ -26,12 +31,13 @@
             <span></span>
         </div>
     </div>
-    <div class="background"></div>
+    </div>
+<div class="background"></div>
 </nav>
 <div id="fullmenu">
     <div class="fullmenulink">
         <a href="{{ route('frontend.about.index') }}">ABOUT</a>
-        <a href="#">CATALOGE</a>
+        <a href="{{ route('catalog') }}">CATALOGE</a>
         <a href="{{ route('frontend.product.index') }}">PRODUCT</a>
         <a href="{{ route('frontend.blog.index') }}">BLOG</a>
         <a href="{{ route('frontend.news.index') }}">NEWS</a>

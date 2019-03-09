@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="320px" height="533px" viewBox="0 0 320 533" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>footer-obj-responsive</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M-1.25055521e-11,288.5902 L-1.25055521e-11,4.59020045 C50,16.5300668 103.333333,17.4317001 160,7.29510022 C216.666667,-2.84149963 270,-1.93986637 320,10 L320,288.5902 L320,533 L9.09494702e-13,533 L9.09494702e-13,288.5902 Z" id="path-1"></path>
+    </defs>
+    <g id="Pages" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Mobile" transform="translate(0.000000, -308.000000)">
+            <g id="Group-4" transform="translate(0.000000, 308.000000)">
+                <g id="Footer">
+                    <g id="Group" transform="translate(0.000000, 0.409800)">
+                        <g id="Group-8">
+                            <g id="modern-contemporary-zola-white-gloss-tavola-stained-parched-oak-kitchen-hero">
+                                <mask id="mask-2" fill="white">
+                                    <use xlink:href="#path-1"></use>
+                                </mask>
+                                <use id="Mask-3" fill="#E92222" fill-rule="nonzero" xlink:href="#path-1"></use>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

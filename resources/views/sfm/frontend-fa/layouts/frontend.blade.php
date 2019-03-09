@@ -22,16 +22,14 @@
     <!-- Site Unique background Color -->
     <meta name="screen-orientation" content="portrait" />
     <!-- Author Name -->
-    <meta itemprop="name" content="CafeLead" />
-    <meta name="author" content="Alireza-Aghaei">
+    <meta name="author" content="-Aghaei">
     <!-- Site orientation in UC Browser -->
     <meta name="full-screen" content="yes" />
     <meta name="imagemode" content="force" />
     <meta name="layoutmode" content="fitscreen" />
     <meta name="wap-font-scale" content="no" />
     <!-- Site index link -->
-
-    <title>لوکستای</title>
+    <title>لوکستای | @yield('title')</title>
     <!--  slider  -->
     <link rel="stylesheet" href="/{{env('THEME_NAME_FA')}}/assets/owl-carousel/css/owl.carousel.min.css" />
     <link rel="stylesheet" href="/{{env('THEME_NAME_FA')}}/assets/css/reset.min.css" />
@@ -60,6 +58,19 @@
                     <span></span>
                 </div>
                 <div class="menu-text"><span>فهرست</span><span>بستن</span></div>
+                <div class="menu-language">
+                    <div class="selected-lang">
+                        <img src="/{{env('THEME_NAME_FA')}}/assets/images/sample/iran.svg" alt="">
+                        <span>فارسی</span>
+                        <img src="/{{env('THEME_NAME_FA')}}/assets/images/sample/arrow-bottom.svg" alt="">
+                    </div>
+                    <div class="more-lang">
+                        <a href="/lang/en">
+                            <img src="/{{env('THEME_NAME_FA')}}/assets/images/sample/english.svg" alt="">
+                            <span>انگلیسی</span>
+                        </a>
+                    </div>
+                </div>
             </div>
             <a class="logo" href="#"></a>
         </nav>
@@ -69,11 +80,7 @@
             <div class="bg-right-obj-header"><img src="/{{env('THEME_NAME_FA')}}/assets/images/sample/Top-Right-Object.svg" alt=""></div>
         </div>
     </header>
-    <main id="product-page">
-        <div class="container">
             @yield('content')
-        </div>
-    </main>
     <footer class="site-footer-2 footer-index" role="contentinfo">
         <div class="content-footer">
             <div class="content">

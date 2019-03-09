@@ -26,7 +26,11 @@
                         <div class='newsproductthumb'><img src='{{ $report->imageUrl}}' draggable='false'></div>
                         <div class='newsproductcontent'>
                             <h4>{{$report->title}}</h4>
-                            <p>{{$report->body}}</p>
+                            <p>
+                                {{ substr(strip_tags($report->body), 0, 200) }}
+                                {{ strlen(strip_tags($report->body)) > 50 ? "..." : "" }}
+
+                            </p>
                             <a href='{{ route('frontend.news.index.show', ['slug'=> $report->slug ])}}' class='newsproductmore'>VIEW MORE</a>
                         </div>
                     </div>
@@ -47,4 +51,9 @@
             </div>
 
     </div>
+@endsection
+
+
+@section('title')
+	SFM
 @endsection

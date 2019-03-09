@@ -1,16 +1,16 @@
 <?php
 
-
 if (!function_exists('set_lang')) {
     function set_lang()
     {
         if (session('lang') == true) {
             return session('lang');
         } else {
-            return 'en';
+            return 'fa';
         }
     }
 }
+
 
 if (!function_exists('moduleState')) {
     function moduleState($module_name)

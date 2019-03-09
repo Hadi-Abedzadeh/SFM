@@ -44,6 +44,10 @@
             </div>
         </div>
     </div>
-
 </div>
+@endsection
+
+
+@section('title')
+    {{$news->title}}
 @endsection

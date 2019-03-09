@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="660px" height="529px" viewBox="0 0 712 529" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.3 (67297) - http://www.bohemiancoding.com/sketch -->
+    <title>Mask</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="48.0882988%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#15CFCF" offset="0%"></stop>
+            <stop stop-color="#1478CF" offset="100%"></stop>
+        </linearGradient>
+        <path d="M688.15274,763.536745 C144.415736,1172.7916 -0.430227739,482.751687 294.436221,490.344872 C393.88713,492.905858 490.815757,383.878092 585.222102,163.261572 L915.936327,557.391438 C837.281013,639.725846 761.353151,708.440948 688.15274,763.536745 Z" id="path-2"></path>
+    </defs>
+    <g id="Pages" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Index" transform="translate(0.000000, -1338.000000)">
+            <g id="Side" transform="translate(276.500000, 1582.000000) scale(-1, 1) translate(-276.500000, -1582.000000) translate(-254.000000, 1054.000000)">
+                <g id="Block">
+                    <mask id="mask-3" fill="white">
+                        <use xlink:href="#path-2"></use>
+                    </mask>
+                    <use id="Mask" fill="url(#linearGradient-1)" fill-rule="nonzero" transform="translate(530.247999, 528.295670) rotate(40.000000) translate(-530.247999, -528.295670) " xlink:href="#path-2"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
