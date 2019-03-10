@@ -6,7 +6,7 @@ if (!function_exists('set_lang')) {
         if (session('lang') == true) {
             return session('lang');
         } else {
-            return 'fa';
+            return 'en';
         }
     }
 }
@@ -60,15 +60,37 @@ if (!function_exists('create_box_news')) {
     }
 }
 
-if (!function_exists('create_box_first_fa')) {
-    function create_box_first_fa($id)
+if (!function_exists('create_box_luxtai_fa')) {
+    function create_box_luxtai_fa($id)
     {
         if (moduleState('card') == 1)
-            return \Modules\Card\Helper::create_box_first_fa($id);
+            return \Modules\Card\Helper::create_box_luxtai_fa($id);
         else
             return "Card module is not installed";
     }
 }
+
+
+if (!function_exists('create_box_komtai_fa')) {
+    function create_box_komtai_fa($id)
+    {
+        if (moduleState('card') == 1)
+            return \Modules\Card\Helper::create_box_komtai_fa($id);
+        else
+            return "Card module is not installed";
+    }
+}
+
+if (!function_exists('create_box_expanse_fa')) {
+    function create_box_expanse_fa($id)
+    {
+        if (moduleState('card') == 1)
+            return \Modules\Card\Helper::create_box_expanse_fa($id);
+        else
+            return "Card module is not installed";
+    }
+}
+
 
 if (!function_exists('ckeditor')) {
     function ckeditor($module_name, $folder_name, $element_id = 'body')

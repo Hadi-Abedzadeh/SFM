@@ -43,17 +43,25 @@ Route::get('/lang/{lang}', function ($lang) {
     return redirect(route('frontend'));
 });
 
-Route::get('/', function () {
+Route::get('/', function (){
+    $locale = set_lang();
+    if($locale == 'fa')
+        return view(env('THEME_NAME') . '.frontend-fa.intro');
+    else
+        return view(env('THEME_NAME') . '.frontend.intro');
+});
+
+Route::get('/brand/{brand?}', function ($brand = null) {
 
     $locale = set_lang();
     $contact = \App\Contact::first();
     $news = \Modules\News\Models\News::whereLang($locale)->orderBy('id', 'DESC')->limit(3)->get();
 
     if ($locale == 'fa') {
-        $products = \Modules\Product\Models\Product::whereLang('fa')->limit(env('PAGINATE_COUNT'))->get();
-        return view(env('THEME_NAME') . '.frontend-fa.frontend-index', compact('contact', 'news', 'products'));
+        $products = \Modules\Product\Models\Product::whereLang('fa')->whereBrand($brand)->limit(env('PAGINATE_COUNT'))->get();
+        return view(env('THEME_NAME') . '.frontend-fa.frontend-index', compact('contact', 'news', 'products', 'brand'));
     } else {
-        return view(env('THEME_NAME') . '.frontend.frontend-index', compact('contact', 'news'));
+        return view(env('THEME_NAME') . '.frontend.frontend-index', compact('contact', 'news', 'brand'));
     }
 
 })->name('frontend');
@@ -75,6 +83,8 @@ Route::get('/backend', 'backend\BackendController@index');
 Route::get('/contact-us', 'frontend\FrontendController@show_contact')->name('frontend.contact-us.index');
 Route::get('/about-us', 'frontend\FrontendController@about_us')->name('frontend.about.index');
 Route::get('/faq', 'frontend\FrontendController@faq');
+Route::get('/support', 'frontend\FrontendController@support')->name('support');
+Route::post('/support', 'frontend\FrontendController@support_submit');
 
 Route::get('/catalog', function () {
 

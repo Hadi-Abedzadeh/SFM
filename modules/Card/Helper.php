@@ -28,12 +28,12 @@ class Helper
             <div class='productcontent'>
                 <h1>$card->title</h1>
                 <p>$card->body</p>
-                <a href='".route('frontend.about.index')."' class='btn'>VIEW MORE</a>
+                <a href='" . route('frontend.about.index') . "' class='btn'>VIEW MORE</a>
             </div>";
         }
     }
 
-    public static function create_box_first_fa($id)
+    public static function create_box_luxtai_fa($id)
     {
         $cards = Card::wherePage_id($id)->whereActive(1)->get();
         foreach ($cards as $card) {
@@ -47,7 +47,7 @@ class Helper
                         <p>
                         $card->body
                         </p>
-                        <a href=\"". route('frontend.about.index') ."\">اطلاعات بیشتر</a>
+                        <a href=\"" . route('frontend.about.index') . "\">اطلاعات بیشتر</a>
                     </div>
                     <div class=\"thumbnail tekoonbede\">
                         <img src=\"/sfm-fa/assets/images/sample/Product-head.png\" alt=\"\" title=\"\">
@@ -84,7 +84,56 @@ class Helper
                     </div>
                     </div>
                     ";
+        }
+    }
 
+    public static function create_box_komtai_fa($id)
+    {
+        $cards = Card::wherePage_id($id)->whereActive(1)->get();
+        foreach ($cards as $card) {
+            echo "
+            <div class=\"bg-obj-top\"><img src=\"/sfm-fa/assets/images/sample/photo-2.jpg\" data-speed=\"-1\" class=\"img-parallax\" alt=\"\" title=\"\"></div>
+            <div class=\"bg-obj-top-left\"><img src=\"/sfm-fa/assets/images/sample/path-1.svg\" alt=\"\" title=\"\" width=\"481px\"></div>
+            <div class=\"container\">
+                <div class=\"row\">
+                    <div class=\"content\">
+                        <h3>$card->title</h3>
+                        <p>
+                        $card->body
+                        </p>
+                        <a href=\"" . route('frontend.about.index') . "\">اطلاعات بیشتر</a>
+                    </div>
+                    <div class=\"thumbnail tekoonbede\">
+                        <img src=\"/sfm-fa/assets/images/sample/Product-head.png\" alt=\"\" title=\"\">
+                    </div>
+                </div>
+            </div>
+            ";
+        }
+    }
+
+    public static function create_box_expanse_fa($id)
+    {
+        $cards = Card::wherePage_id($id)->whereActive(1)->get();
+        foreach ($cards as $card) {
+            echo "
+            <div class=\"bg-obj-top\"><img src=\"/sfm-fa/assets/images/sample/photo-2.jpg\" data-speed=\"-1\" class=\"img-parallax\" alt=\"\" title=\"\"></div>
+            <div class=\"bg-obj-top-left\"><img src=\"/sfm-fa/assets/images/sample/path-1.svg\" alt=\"\" title=\"\" width=\"481px\"></div>
+            <div class=\"container\">
+                <div class=\"row\">
+                    <div class=\"content\">
+                        <h3>$card->title</h3>
+                        <p>
+                        $card->body
+                        </p>
+                        <a href=\"" . route('frontend.about.index') . "\">اطلاعات بیشتر</a>
+                    </div>
+                    <div class=\"thumbnail tekoonbede\">
+                        <img src=\"/sfm-fa/assets/images/sample/Product-head.png\" alt=\"\" title=\"\">
+                    </div>
+                </div>
+            </div>
+            ";
         }
     }
 }
