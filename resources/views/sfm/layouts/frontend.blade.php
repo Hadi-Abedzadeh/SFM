@@ -57,6 +57,9 @@
         {!! \App\Contact::first()->etc !!}
     </div>
 </footer>
+<div class="footerlinks">
+<a href="#">FAQ</a> | <a href="#">CAREER</a> | <a href="#">TICKET</a>
+</div>
 <script type="text/javascript" src="/{{ env('THEME_NAME') }}/assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="/{{ env('THEME_NAME') }}/assets/js/owl.carousel.min.js"></script>
 <script type="text/javascript" src="/{{ env('THEME_NAME') }}/assets/js/plugin.js"></script>

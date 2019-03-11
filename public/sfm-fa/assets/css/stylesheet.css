@@ -98,6 +98,7 @@ header .main-header .top-menu-icon {cursor: pointer;}
 #main-page>header>nav{position:relative;z-index:6;top:0;width:100%;height:100px;padding:30px;display:flex;justify-content:space-between;}
 #main-page.index-page>header>nav{position:absolute;}
 #main-page>header>nav .logo{background:#000;width:121px;height:26px;background:url(../images/sample/logo.svg);background-repeat: no-repeat;margin-top: 10px;}
+.fullmenu-active #main-page>header>nav .logo{background-image:url(../images/sample/redlogo.svg);}
 #main-page>header>nav .menu{/*! cursor:pointer; */display:flex;}
 #main-page>header>nav .menu .menu-text{position:relative;overflow:hidden;width:75px;color:#fff;line-height:30px;font-size:17px;font-weight:500;cursor: default;}
 #main-page>header>nav .menu .menu-text span{transition:.2s;position:absolute;right:-100%;}
