@@ -40,18 +40,20 @@ Route::get('/lang/{lang}', function ($lang) {
 
     \Illuminate\Support\Facades\Request::session()->put('lang', $select_lang);
 
-    return redirect(route('frontend'));
+    return redirect()->back();
 });
 
-Route::get('/', function (){
+Route::get('/', function () {
     $locale = set_lang();
-    if($locale == 'fa')
+    if ($locale == 'fa')
         return view(env('THEME_NAME') . '.frontend-fa.intro');
     else
         return view(env('THEME_NAME') . '.frontend.intro');
 });
 
 Route::get('/brand/{brand?}', function ($brand = null) {
+
+    if ($brand == null) return redirect('/brand/luxtai');
 
     $locale = set_lang();
     $contact = \App\Contact::first();
@@ -81,7 +83,7 @@ Route::prefix('backend')->middleware('auth')->group(function () {
 
 Route::get('/backend', 'backend\BackendController@index');
 Route::get('/contact-us', 'frontend\FrontendController@show_contact')->name('frontend.contact-us.index');
-Route::get('/about-us', 'frontend\FrontendController@about_us')->name('frontend.about.index');
+Route::get('/about-us/{brand?}', 'frontend\FrontendController@about_us')->name('frontend.about.index');
 Route::get('/faq', 'frontend\FrontendController@faq');
 Route::get('/support', 'frontend\FrontendController@support')->name('support');
 Route::post('/support', 'frontend\FrontendController@support_submit');

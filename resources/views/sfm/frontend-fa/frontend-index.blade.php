@@ -79,11 +79,11 @@
         <section id="sec1">
             @switch($brand)
                 @case('luxtai')
-                    {{ create_box_luxtai_fa(4) }} @break
+                    {{ create_box_fa(4) }} @break
                 @case('komtai')
-                    {{ create_box_komtai_fa(6) }} @break
+                    {{ create_box_fa(6) }} @break
                 @case('expanse')
-                    {{ create_box_expanse_fa(5) }} @break
+                    {{ create_box_fa(5) }} @break
             @endswitch
         </section>
         <section id="products-slider">

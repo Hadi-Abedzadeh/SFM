@@ -19,9 +19,9 @@ class FrontendModuleProductController extends Controller
 
         $locale = set_lang();
         if ($brand == null) {
-            $products = Product_list::whereLang($locale)->brand($brand)->get();
-        }else{
             $products = Product_list::whereLang($locale)->get();
+        }else{
+            $products = Product_list::whereLang($locale)->whereBrand($brand)->get();
         }
         if ($locale == 'en') {
             return view(env('THEME_NAME') . '.frontend.product.index', compact('products'));

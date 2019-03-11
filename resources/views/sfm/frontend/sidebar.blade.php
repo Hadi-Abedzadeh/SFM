@@ -1,3 +1,4 @@
+
 <div class="fixedsection">
     <div class="fixedheader"></div>
     <div class="fixedleft"></div>
@@ -32,9 +33,9 @@
 <div id="fullmenu">
     <div class="fullmenulink">
         <a href="{{ route('frontend') }}">HOME</a>
-        <a href="{{ route('frontend.about.index') }}">ABOUT</a>
+        <a href="{{ route('frontend.about.index') }}/{{ $brand }}">ABOUT</a>
         <a href="{{ route('catalog') }}">CATALOGE</a>
-        <a href="{{ route('frontend.product.index') }}">PRODUCT</a>
+        <a href="{{ route('frontend.product.index') }}/{{ $brand }}">PRODUCT</a>
         <a href="{{ route('frontend.blog.index') }}">BLOG</a>
         <a href="{{ route('frontend.news.index') }}">NEWS</a>
         <a href="{{ route('frontend.contact-us.index') }}">CONTACT</a>

@@ -1,9 +1,15 @@
-@extends(env('THEME_NAME').'.layouts.fullpage-frontend')
+@extends(env('THEME_NAME').'.layouts.fullpage-frontend', ['brandz' => $brand])
 
 @section('content')
-
     <div class="section header">
-        {!! create_box_first(1) !!}
+        @switch($brand)
+            @case('luxtai')
+            {{ create_box_en(7) }} @break
+            @case('komtai')
+            {{ create_box_en(8) }} @break
+            @case('expanse')
+            {{ create_box_en(9) }} @break
+        @endswitch
     </div>
     <div class="section products">
         <div class="sectionheader">

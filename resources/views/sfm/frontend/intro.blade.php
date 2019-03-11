@@ -21,11 +21,11 @@
     <div class="fixedheader"></div>
 </div>
 <nav>
-    <a class="logo" href="index.php"></a>
+    <a class="logo" href="{{ route('frontend') }}"></a>
     <div class="navside">
         <div class="langchoose">
             <a class="active"><span>EN</span><div class="flagen"></div></a>
-            <a href="#"><span>IR</span><div class="flagfa"></div></a>
+            <a href="/lang/fa"><span>IR</span><div class="flagfa"></div></a>
         </div>
         <div class="menu noselect">
             <div class="menu-text"><span>MENU</span><span>CLOSE</span></div>
