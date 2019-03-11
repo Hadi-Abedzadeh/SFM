@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/latest/html5shiv.min.js"></script>
+    <script srcTiketing ="https://oss.maxcdn.com/html5shiv/latest/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/latest/respond.min.js"></script>
     <![endif]-->
     <link rel="stylesheet" href="/{{env('THEME_NAME')}}/assets/css/animate.css" type="text/css" media="screen">

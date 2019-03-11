@@ -20,6 +20,8 @@
 //}
 
 
+use Illuminate\Support\Facades\Auth;
+
 app()->setLocale('fa');
 
 require_once(base_path('load_modules.php'));
@@ -100,6 +102,10 @@ Route::get('/catalog', function () {
 })->name('catalog');
 
 
+Route::get('/logout', function (){
+    Auth::logout();
+    return redirect('/login');
+});
 Auth::routes();
 
 

@@ -6,9 +6,9 @@
             @case('luxtai')
             {{ create_box_en(7) }} @break
             @case('komtai')
-            {{ create_box_en(8) }} @break
-            @case('expanse')
             {{ create_box_en(9) }} @break
+            @case('expanse')
+            {{ create_box_en(8) }} @break
         @endswitch
     </div>
     <div class="section products">
@@ -33,7 +33,7 @@
                     <div class='newsproductcontent'>
                         <h4>{{$report->title}}</h4>
                         <p>
-                            {{ substr(strip_tags($report->body), 0, 200) }}
+                            {{ substr(strip_tags($report->body), 0, 150) }}
                             {{ strlen(strip_tags($report->body)) > 50 ? "..." : "" }}
 
                         </p>
