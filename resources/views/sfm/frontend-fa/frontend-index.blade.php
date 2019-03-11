@@ -73,7 +73,7 @@
             </div>
             <a class="logo" href="#"></a>
         </nav>
-        @include('sfm.frontend-fa.nav-fa')
+        {{-- @include('sfm.frontend-fa.nav-fa') --}}
     </header>
     <main>
         <section id="sec1">
