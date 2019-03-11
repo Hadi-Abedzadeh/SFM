@@ -27,35 +27,14 @@
 	<a class="active"><span>EN</span><div class="flagen"></div></a>
 	<a href="#"><span>IR</span><div class="flagfa"></div></a>
 	</div>
-	<div class="menu noselect">
-        <div class="menu-text"><span>MENU</span><span>CLOSE</span></div>
-        <div class="menu-icon">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </div>
 	</div>
 </nav>
-<div id="fullmenu">
-    <div class="fullmenulink">
-        <a href="{{ route('frontend') }}">HOME</a>
-        <a href="{{ route('frontend.about.index') }}">ABOUT</a>
-        <a href="{{ route('catalog') }}">CATALOGE</a>
-        <a href="{{ route('frontend.product.index') }}">PRODUCT</a>
-        <a href="{{ route('frontend.blog.index') }}">BLOG</a>
-        <a href="{{ route('frontend.news.index') }}">NEWS</a>
-        <a href="{{ route('frontend.contact-us.index') }}">CONTACT</a>
-    </div>
-	<div class="fullmenucircle1"></div>
-	<div class="fullmenucircle2"></div>
-</div>
 <div class="intro noselect">
 <div class="container">
 <a href="/brand/luxtai" class="introbox"><img src="/{{env('THEME_NAME')}}/assets/images/luxtai.png" draggable="false"></a>
 <a href="/brand/komtai" class="introbox"><img src="/{{env('THEME_NAME')}}/assets/images/komtai.png" draggable="false"></a>
 <a href="/brand/expanse" class="introbox"><img src="/{{env('THEME_NAME')}}/assets/images/expanse.png" draggable="false"></a>
-<div class="introbox oembox"><div class="indexuner"><h2>OEM</h2><h3>ORIGINAL <span>EQUIPMENT</span> MANUFACTURER</h3><div class="oemclose">BACK</div></div></div>
+<div class="introbox oembox"><div class="indexuner"><h2>OEM</h2><h3>ORIGINAL <span>EQUIPMENT</span> MANUFACTURER</h3><div class="oemclose"><span class="icon-back"></span>BACK</div></div></div>
 <div class="oem">
 <div class="oemcol"><img src="/{{env('THEME_NAME')}}/assets/images/logo.svg"/></div>
 <div class="oemcol"><img src="/{{env('THEME_NAME')}}/assets/images/logo.svg"/></div>

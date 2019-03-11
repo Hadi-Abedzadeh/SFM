@@ -4,7 +4,7 @@
 
     <div class="singleheader">
         <div class="singlecover"><img src="/{{env('THEME_NAME')}}/assets/images/background.jpg"></div>
-        <a href="{{ route('frontend.blog.index') }}" class="singleback">BACK TO BLOG</a>
+        <a href="{{ route('frontend.blog.index') }}" class="singleback"><span class="icon-back"></span>BACK TO BLOG</a>
     </div>
     <div class="singleheaderclear"></div>
     <div class="container-fluid">

@@ -5,7 +5,7 @@
     <div class="fixedleftplus"></div>
     <div class="fixedright"></div>
     <div class="fixedrightplus"></div>
-    <div class="footermap"><img src="images/map.jpg"></div>
+    <div class="footermap"><img src="/{{env('THEME_NAME')}}/assets/images/map.jpg"></div>
 </div>
 <nav>
     <a class="logo" href="{{ route('frontend') }}"></a>

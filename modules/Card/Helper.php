@@ -39,12 +39,11 @@ class Helper
     {
         $cards = Card::wherePage_id($id)->whereActive(1)->get();
         foreach ($cards as $card) {
-            echo "<a href='$card->slug'>
-                   <div class='product'>
+            echo "<a href='$card->slug' class='product'>
                     <div class='productthumb'><img src='$card->imgUrl' draggable='false'></div>
                     <div class='producttitle'>$card->title</div>
                     <span class='productmore'>VIEW MORE</span>
-                </div></a>";
+                </a>";
         }
     }
 

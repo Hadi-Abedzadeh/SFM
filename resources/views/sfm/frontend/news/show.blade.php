@@ -3,7 +3,7 @@
 @section('content')
     <div class="singleheader">
     <div class="singlecover"><img src="/{{env('THEME_NAME')}}/assets/images/background.jpg"></div>
-    <a href="{{ route('frontend.news.index') }}" class="singleback">BACK TO NEWS</a>
+    <a href="{{ route('frontend.news.index') }}" class="singleback"><span class="icon-back"></span>BACK TO NEWS</a>
 </div>
 <div class="singleheaderclear"></div>
 <div class="container-fluid">
