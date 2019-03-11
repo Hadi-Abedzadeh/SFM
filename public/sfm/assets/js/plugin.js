@@ -24,6 +24,19 @@ if($('body').hasClass('fp-viewing-3')){$.fn.fullpage.moveSectionUp();}else{$.fn.
 $(document).on('click','nav .menu,#fullmenu',function(){
 $('body').toggleClass('fullmenu-active');
 });
+$(document).on('mouseenter','.introbox:not(.oembox)',function(){
+$('.intro').addClass('hovererded');
+});
+$(document).on('mouseout','.introbox:not(.oembox)',function(){
+$('.intro').removeClass('hovererded');
+});
+$(document).on('click','body:not(.oemactive) .introbox.oembox',function(){
+$('body').addClass('oemactive');
+if($(window).width() < 800){$('html, body').animate({scrollTop: 0},'slow');}
+});
+$(document).on('click','.oemclose',function(){
+$('body').removeClass('oemactive');
+});
 $('.section.products').mousemove(function(event){
 	var allscreenX=($(window).width()/70)/2;
 	var mouseposX=event.pageX/50;

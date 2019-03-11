@@ -61,6 +61,7 @@ Route::get('/brand/{brand?}', function ($brand = null) {
     $contact = \App\Contact::first();
     $news = \Modules\News\Models\News::whereLang($locale)->orderBy('id', 'DESC')->limit(3)->get();
 
+	
     if ($locale == 'fa') {
         $products = \Modules\Product\Models\Product::whereLang('fa')->whereBrand($brand)->limit(env('PAGINATE_COUNT'))->get();
         return view(env('THEME_NAME') . '.frontend-fa.frontend-index', compact('contact', 'news', 'products', 'brand'));
@@ -68,6 +69,9 @@ Route::get('/brand/{brand?}', function ($brand = null) {
         return view(env('THEME_NAME') . '.frontend.frontend-index', compact('contact', 'news', 'brand'));
     }
 
+	
+
+	
 })->name('frontend');
 
 Route::prefix('backend')->middleware('auth')->group(function () {
