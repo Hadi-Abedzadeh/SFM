@@ -14,11 +14,15 @@ class FrontendModuleProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($brand = null)
     {
-        $locale = set_lang();
-        $products = Product_list::whereLang($locale)->get();
 
+        $locale = set_lang();
+        if ($brand == null) {
+            $products = Product_list::whereLang($locale)->get();
+        }else{
+            $products = Product_list::whereLang($locale)->whereBrand($brand)->get();
+        }
         if ($locale == 'en') {
             return view(env('THEME_NAME') . '.frontend.product.index', compact('products'));
         } else {
@@ -63,7 +67,7 @@ class FrontendModuleProductController extends Controller
 
         if ($locale == 'en') {
             return view(env('THEME_NAME') . '.frontend.product.show', compact('product_list', 'same_products'));
-        }else{
+        } else {
             return view(env('THEME_NAME') . '.frontend-fa.product.show', compact('product_list', 'same_products'));
 
         }
@@ -107,12 +111,12 @@ class FrontendModuleProductController extends Controller
     {
 
         $locale = set_lang();
-        if($locale == 'fa'){
+        if ($locale == 'fa') {
 
             $product = Product::whereSlug($slug)->first();
             $products = Product_list::whereProduct_id($product->id)->get();
             $category = $product->title;
-            return view(env('THEME_NAME').'.frontend-fa.product.catalog', compact('products', 'category'));
+            return view(env('THEME_NAME') . '.frontend-fa.product.catalog', compact('products', 'category'));
 
         }
         return Product_list::whereSlug($slug)->get();

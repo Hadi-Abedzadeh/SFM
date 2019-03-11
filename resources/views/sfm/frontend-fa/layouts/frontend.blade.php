@@ -29,7 +29,7 @@
     <meta name="layoutmode" content="fitscreen" />
     <meta name="wap-font-scale" content="no" />
     <!-- Site index link -->
-    <title>لوکستای | @yield('title')</title>
+    <title>@yield('title')</title>
     <!--  slider  -->
     <link rel="stylesheet" href="/{{env('THEME_NAME_FA')}}/assets/owl-carousel/css/owl.carousel.min.css" />
     <link rel="stylesheet" href="/{{env('THEME_NAME_FA')}}/assets/css/reset.min.css" />
