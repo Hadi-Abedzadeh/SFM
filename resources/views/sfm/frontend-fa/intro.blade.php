@@ -34,7 +34,7 @@
 <a href="/brand/luxtai" class="introbox"><img src="/{{env('THEME_NAME')}}/assets/images/luxtai.png" draggable="false"></a>
 <a href="/brand/komtai" class="introbox"><img src="/{{env('THEME_NAME')}}/assets/images/komtai.png" draggable="false"></a>
 <a href="/brand/expanse" class="introbox"><img src="/{{env('THEME_NAME')}}/assets/images/expanse.png" draggable="false"></a>
-<div class="introbox oembox"><div class="indexuner"><h2>OEM</h2><h3>محصول مورد نظر خود را انتخاب نمایید</h3><div class="oemclose">BACK</div></div></div>
+<div class="introbox oembox"><div class="indexuner"><h2>OEM</h2><h3>برند خود را بسازید</h3><div class="oemclose">BACK</div></div></div>
 <div class="oem">
 <div class="oemcol"><img src="/{{env('THEME_NAME')}}/assets/images/logo.svg"/></div>
 <div class="oemcol"><img src="/{{env('THEME_NAME')}}/assets/images/logo.svg"/></div>

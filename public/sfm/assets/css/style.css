@@ -38,6 +38,7 @@ nav .menu .menu-icon span:nth-child(3){width:90%;}
 nav .background{-webkit-transition:.3s;transition:.3s;position:absolute;z-index:1;top:0;right:0;width:100%;height:100%;}
 .fullmenu-active nav .background{-webkit-transform:translateY(-100%);transform:translateY(-100%);-webkit-clip-path: polygon(0 0, 100% 0, 100% 100px, 90% 50px, 0 100px);clip-path: polygon(0 0, 100% 0, 100% 100px, 90% 50px, 0 100px);}
 .areapage .fullmenu-active nav{position:fixed;}
+.fp-enabled nav .background{display:none;}
 .navside{display:-webkit-box;display:-ms-flexbox;display:flex;position:relative;z-index:2;}
 .langchoose{-webkit-transition:.3s;transition:.3s;background:rgba(255,255,255,.2);width:110px;height:40px;overflow:hidden;margin:-5px;cursor:pointer;}
 .langchoose a{display:block;line-height:40px;padding-left:15px;width:100%;height:40px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;color:#fff;text-align:center;}
