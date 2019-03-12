@@ -112,9 +112,9 @@
                             @foreach($products as $product)
                                 <div class="items">
                                     <a href="{{ route('frontend.product.catalog', ['slug'=> $product->slug]) }}">
-                                        <img src="/{{ env('THEME_NAME_FA') }}/assets/images/sample/product-1.png"
+                                        <img src="{{ $product->imageUrl }}"
                                              title="" alt="">
-                                        <span class="cost">7133</span>
+                                        <span class="cost">{{ $product->title }}</span>
                                         <span class="more-info">اطــــلاعــاتـــــــ بــیــــشــــتـــــــر</span>
                                     </a>
                                 </div>
@@ -188,6 +188,9 @@
                     <div class="obj-map-footer"><img src="/{{ env('THEME_NAME_FA') }}/assets/images/sample/map.jpg"
                                                      width="480px" title="" alt=""></div>
                 </a>
+                <div class="new-nav-link">
+                    <a href="#" target="_blank">پرسش و پاسخ</a> | <a href="#" target="_blank">استخدام</a> | <a href="#" target="_blank">پشتیبانی</a>
+                </div>
                 <div class="copyright">
                     <a href="https://cafelead.agency"><img
                             src="/{{ env('THEME_NAME_FA') }}/assets/images/sample/Cafelead-copyright.svg" alt=""
