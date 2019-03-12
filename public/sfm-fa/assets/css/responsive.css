@@ -65,7 +65,7 @@
 }
 
 @media only screen and (min-width: 310px) and (max-width: 500px) {
-
+    #main-page>header>nav .logo{margin-top: 0;}
     #sec1 .container h3{font-size: 28px;margin-top: 28px;}
     #sec1 .container h3 span{font-size: 36px;}
     #sec1 .container .row{flex-direction: column-reverse;}
@@ -100,7 +100,7 @@
     /*  menu  */
     .fullmenu-active nav .menu .menu-icon span:nth-child(3){transform: rotateZ(-45deg) translateX(4px) translateY(-6px);}
     .fullmenu-active nav .menu .menu-icon span:nth-child(1){transform: rotateZ(45deg) translateX(6px) translateY(8px);}
-    #main-page > header > nav .menu .menu-icon span{height: 5px;}
+    #main-page > header > nav .menu .menu-icon span{height: 3px;}
     .fullmenucircle1,.fullmenucircle2{display: none;}
     #fullmenu .fullmenulink a{margin: 0px;}
 
@@ -154,7 +154,7 @@
     #main-page > header > nav .menu .menu-language .selected-lang > span{display: none;}
     #main-page > header > nav .menu .menu-language .selected-lang{width: 78px;padding: 0 10px;}
     #main-page > header > nav .menu .menu-language{width: 90px;}
-    body > div > header .header-bg-objs .bg-obj-header{-webkit-mask-size: 100% 137px;mask-size: 100% 137px;webkit-mask-size: 100% 137px;}
+    body > div > header .header-bg-objs .bg-obj-header{-webkit-mask-size: 100% 110px;mask-size: 100% 110px;webkit-mask-size: 100% 110px;-webkit-mask-image: url(../images/sample/path-top-2-mobile.svg);mask-image: url(../images/sample/path-top-2-mobile.svg);webkit-mask-image: url(../images/sample/path-top-2-mobile.svg);}
     /* footer */
     body > div > .site-footer-2{height: 600px;}
     body > div > footer > .bg-obj-footer2{height: 100%;-webkit-mask-image: url(../images/sample/footer-obj-responsive.svg);mask-image: url(../images/sample/footer-obj-responsive.svg);webkit-mask-image: url(../images/sample/footer-obj-responsive.svg);}
