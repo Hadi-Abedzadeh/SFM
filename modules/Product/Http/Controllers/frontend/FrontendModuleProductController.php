@@ -62,8 +62,8 @@ class FrontendModuleProductController extends Controller
     public function show($product_list)
     {
         $locale = set_lang();
-        $product_list = Product_list::whereSlug($product_list)->whereLang($locale)->first();
-        $same_products = Product_list::whereProduct_id($product_list->product_id)->whereLang($locale)->get();
+        $product_list = Product_list::whereSlug($product_list)->whereLang($locale)->firstOrFail();
+        $same_products = Product_list::whereProduct_id($product_list->product_id)->whereLang($locale)->orderBy('id', 'desc')->limit(6)->get();
 
         if ($locale == 'en') {
             return view(env('THEME_NAME') . '.frontend.product.show', compact('product_list', 'same_products'));
