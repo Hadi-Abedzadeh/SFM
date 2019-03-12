@@ -105,6 +105,7 @@
                 </div>
             </div>
             <a href="#" target="_blank" class="map-footer"><img src="/{{env('THEME_NAME_FA')}}/assets/images/sample/map.jpg" alt="" title=""></a>
+            <div class="new-nav-link"><a href="#" target="_blank">پرسش و پاسخ</a> | <a href="#" target="_blank">استخدام</a> | <a href="#" target="_blank">پشتیبانی</a></div>
             <div class="copyright">
                 <a href="https://cafelead.agency"><img src="/{{env('THEME_NAME_FA')}}/assets/images/sample/Cafelead-copyright.svg" alt="" title=""></a>
             </div>

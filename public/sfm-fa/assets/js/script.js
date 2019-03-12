@@ -107,6 +107,7 @@ $(document).ready(function(){
             },
             1000:{
                 items:3,
+                autoplayTimeout: 3000,
                 nav: false
             }
         }
