@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="/{{env('THEME_NAME')}}/assets/css/animate.css" type="text/css" media="screen">
     <link rel="stylesheet" href="/{{env('THEME_NAME')}}/assets/css/fullpage.min.css" type="text/css" media="screen">
     <link rel="stylesheet" href="/{{env('THEME_NAME')}}/assets/css/style.css" type="text/css" media="screen">
-
+    <link rel="stylesheet" href="/{{ env('THEME_NAME_FA') }}/assets/css/fonts.css"/>
 
 </head>
 <body>
@@ -50,7 +50,7 @@
         <div class="introbox oembox">
             <div class="indexuner"><h2>OEM</h2>
                 <h3>برند خود را بسازید</h3>
-                <div class="oemclose">BACK</div>
+                <div class="oemclose">برگشت</div>
             </div>
         </div>
         <div class="oem">
