@@ -1,17 +1,18 @@
 /* responsive */
-@media only screen and (min-width: 992px) and (max-width: 1440px) {
-
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+    .products .items{width: auto;}
 }
-
 @media only screen and (min-width: 500px) and (max-width: 991px) {
+    .products .items{width: auto;}
     #sec1 .container h3{font-size: 28px;margin-top: 28px;}
     #sec1 .container h3 span{font-size: 36px;}
     #sec1 .container .row{flex-direction: column-reverse;}
-    #sec1 .thumbnail , #sec1 .content, #sec1 .thumbnail img,#products-slider .content .slider .owl-item .items,.site-footer .right-footer,.site-footer .left-footer{width: 100%;z-index: 1;}
+    #sec1 .thumbnail , #sec1 .content,.site-footer .right-footer,.site-footer .left-footer{width: 100%;z-index: 1;}
+    #products-slider .content .slider .owl-item .items{margin: auto;width: auto;}
+    #sec1 .tekoonbede{max-width: 350px;margin:auto;}
     #sec1 .bg-obj-top{-webkit-mask-image: url(../images/sample/path-top-2-mobile.svg);mask-image: url(../images/sample/path-top-2-mobile.svg);webkit-mask-image: url(../images/sample/path-top-2-mobile.svg);height: 250px;}
     #sec1 .container a{float: none;margin: 25px auto;}
     #products-slider .title,#products-slider .title h2,#sec3 .title,#sec3 .content .news h3,.site-footer .right-footer .title h2,.site-footer .right-footer .title,.site-footer .right-footer .content .info-footer li,#sec1 .container h3{text-align: center;}
-    #products-slider .content .slider .owl-nav,#sec3 .bg-obj-center-left{display: none;}
     #sec3{margin-top: 80px;}
     #sec3 .title > a{margin-right: 0;border-radius: 5px 5px 5px 5px;margin-top: 20px;}
     #sec3 .content{width: 100%;flex-wrap: wrap;}
@@ -64,7 +65,12 @@
     #notfound-page .notfound-section .number > span{font-size: 50vw;color: #ea3030;position: relative;}
 }
 
+@media only screen and (min-width: 600px) and (max-width: 769px){
+    .products .items .more-info{display: none;}
+}
+
 @media only screen and (min-width: 310px) and (max-width: 500px) {
+    #products-slider .content .slider .owl-nav,#sec3 .bg-obj-center-left{display: none;}
     #main-page>header>nav .menu .menu-text{display: none;}
     #main-page > header > nav .menu .menu-icon{margin-left:inherit;}
     #main-page>header>nav .logo{margin-top: 0;}

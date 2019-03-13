@@ -100,15 +100,17 @@ $(document).ready(function(){
         navText : ["<div class='owl-next'><img src='/sfm-fa/assets/images/sample/right-bg-slide.svg' width='54px'></div>","<div class='owl-prev'><img src='/sfm-fa/assets/images/sample/left-bg-slide.svg' width='54px'></div>"],
         responsive:{
             0:{
-                items:1
+                items:1,
+                nav: false
             },
             600:{
+                margin: 20,
                 items:2
             },
             1000:{
                 items:3,
                 autoplayTimeout: 3000,
-                nav: false
+                
             }
         }
     });
