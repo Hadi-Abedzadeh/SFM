@@ -25,15 +25,17 @@
     <div class="navside">
 	<div class="langchoose">
 	<a class="active"><span>EN</span><div class="flagen"></div></a>
-	<a href="/lang/fa"><span>IR</span><div class="flagfa"></div></a>
+        <a href="{{ change_lang('en') }}">
+
+        <span>IR</span><div class="flagfa"></div></a>
 	</div>
 	</div>
 </nav>
 <div class="intro noselect">
 <div class="container">
-<a href="/brand/luxtai" class="introbox"><img src="/{{env('THEME_NAME')}}/assets/images/luxtai.png" draggable="false"></a>
-<a href="/brand/komtai" class="introbox"><img src="/{{env('THEME_NAME')}}/assets/images/komtai.png" draggable="false"></a>
-<a href="/brand/expanse" class="introbox"><img src="/{{env('THEME_NAME')}}/assets/images/expanse.png" draggable="false"></a>
+<a href="/{{set_lang('en')}}/brand/luxtai" class="introbox"><img src="/{{env('THEME_NAME')}}/assets/images/luxtai.png" draggable="false"></a>
+<a href="/{{set_lang('en')}}/brand/komtai" class="introbox"><img src="/{{env('THEME_NAME')}}/assets/images/komtai.png" draggable="false"></a>
+<a href="/{{set_lang('en')}}/brand/expanse" class="introbox"><img src="/{{env('THEME_NAME')}}/assets/images/expanse.png" draggable="false"></a>
 <div class="introbox oembox"><div class="indexuner"><h2>OEM</h2><h3>ORIGINAL <span>EQUIPMENT</span> MANUFACTURER</h3><div class="oemclose">BACK</div></div></div>
 <div class="oem">
 <div class="oemcol"><img src="/{{env('THEME_NAME')}}/assets/images/logo.svg"/></div>

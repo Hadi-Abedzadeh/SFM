@@ -11,38 +11,46 @@ use Modules\Blog\Models\Post;
 
 class FrontendModuleBlogController extends Controller
 {
-    public function index()
+    public function index($lang = null)
     {
-        $locale = set_lang();
+        $locale = set_lang($lang);
         $blog_posts = Post::whereActive(1)->whereLang($locale)->orderBy('id', 'DESC')->paginate(env('PAGINATE_COUNT'));
+
+        $most_views = Post::whereLang($locale)->orderBy('viewCount', sorting())->limit(6)->get();
 
         if($locale == 'en'){
             return view(env('THEME_NAME') . '.frontend.blog.index', compact('blog_posts'));
         }else{
-            return view(env('THEME_NAME') . '.frontend-fa.blog.index', compact('blog_posts'));
+            return view(env('THEME_NAME') . '.frontend-fa.blog.index', compact('blog_posts', 'most_views'));
         }
     }
 
 
-    public function show($post)
+    public function show($lang = null, $post)
     {
-        $locale = set_lang();
+        $locale = set_lang($lang);
 
+        $array = array();
         if (isset($post->categories[0]->pivot)) {
             $category = $post->categories;
             $category_id = $category[0]->pivot->category_id;
             $category_id = DB::table('category_post')->whereCategory_id($category_id)->get();
             foreach ($category_id as $c) {
-                $similar[] = Post::whereId($c->post_id)->whereLang($locale)->limit(7)->get();
+                $similar[] = Post::whereId($c->post_id)->limit(6)->get();
             }
-        }else {
-            $similar = Post::limit(3)->whereLang($locale)->get();
+            foreach($similar as $s){
+                array_push($array, $s[0]);
+            }
+        } else {
+            $array = Post::limit(6)->whereLang($locale)->get();
         }
 
+        $tags = $post->tags()->get();
+
         if($locale == 'en'){
-            return view(env('THEME_NAME') . '.frontend.blog.show', compact('post', 'similar'));
+            return view(env('THEME_NAME') . '.frontend.blog.show', compact('post', 'array', 'tags'));
         }else{
-            return view(env('THEME_NAME') . '.frontend-fa.blog.show', compact('post', 'similar'));
+            return view(env('THEME_NAME') . '.frontend-fa.blog.show', compact('post', 'array', 'tags'));
         }
 
     }

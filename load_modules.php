@@ -1,13 +1,25 @@
 <?php
 
+use Illuminate\Support\Facades\Request;
+
 if (!function_exists('set_lang')) {
-    function set_lang()
+    function set_lang($lang = null)
     {
-        if (session('lang') == true) {
-            return session('lang');
-        } else {
-            return 'en';
+        switch ($lang){
+            case 'fa': $set_lang = 'fa'; break;
+            case 'en': $set_lang = 'en'; break;
+
+            case null: $set_lang = 'fa'; break;
+            default: $set_lang = 'fa'; break;
         }
+
+        return $set_lang;
+
+//        if (session('lang') == true) {
+//            return session('lang');
+//        } else {
+//            return 'en';
+//        }
     }
 }
 
@@ -101,4 +113,49 @@ if (!function_exists('active_nav')) {
     {
         return ($_SERVER['REQUEST_URI'] == "$block_name") ? 'active' : '';
     }
+}
+
+
+function sorting()
+{
+    $order = (request()->input('order')) ? request()->input('order') : 'desc';
+    $order = strtoupper($order);
+
+    switch ($order) {
+        case 'ASC':
+            $sort = 'ASC';
+            break;
+        case 'DESC':
+            $sort = 'DESC';
+            break;
+        default:
+            $sort = 'DESC';
+            break;
+    }
+
+    return $sort;
+}
+
+
+function change_lang($lang){
+
+    switch ($lang) {
+        case 'fa':
+            $select_lang = 'en';
+            break;
+        case 'en':
+            $select_lang = 'fa';
+            break;
+        default :
+            $select_lang = 'fa';
+    }
+
+    $url = Request::url();
+
+        $url = str_replace("/$lang", "/$select_lang", $url );
+
+
+    \Illuminate\Support\Facades\Request::session()->put('lang', $select_lang);
+
+    return $url;
 }

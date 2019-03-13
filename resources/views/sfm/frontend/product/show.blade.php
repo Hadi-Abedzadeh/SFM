@@ -48,27 +48,21 @@
                         <span>INNER LAMP</span>
                     </div>
                 </div>
-                <a href="#" class="btn">CATALOGE DOWNLOAD</a>
+                <a href="{{ $product_list->file_url }}" class="btn">CATALOGE DOWNLOAD</a>
             </div>
             <div class="singleproductimg">
                 <div><img src="/{{env('THEME_NAME')}}/assets/images/main-product.png" draggable="false"></div>
             </div>
         </div>
         <div class="owl-carousel productsarea">
-
-
             @foreach($same_products as $same_product)
                 <div class="product micro1 active">
-                    <div class="productthumb"><img src="/{{env('THEME_NAME')}}/assets/images/product-2.png"
-                                                   draggable="false"></div>
-                    <div class="producttitle">    {{ $same_product->title }}</div>
-                    <a href="{{route('frontend.product.show',['slug' => $same_product->slug])}}" class="productmore">VIEW
-                        MORE</a>
+                    <div class="productthumb">
+                        <img src="/{{env('THEME_NAME')}}/assets/images/product-2.png" draggable="false">
+                    </div>
+                    <div class="producttitle">{{ $same_product->title }}</div>
+                    <a href="{{route('frontend.product.show',['lang'=>'en','slug' => $same_product->slug])}}" class="productmore">VIEW MORE</a>
                 </div>
-
-
-
-
             @endforeach
 
         </div>

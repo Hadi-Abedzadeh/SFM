@@ -19,7 +19,7 @@
         <div class="container">
             {{ create_box_second(2) }}
         </div>
-        <a href="{{route('frontend.product.index')}}" class="seealllink"><span>SEE ALL PRODUCTS</span></a>
+        <a href="{{route('frontend.product.index',['lang' =>'en'])}}" class="seealllink"><span>SEE ALL PRODUCTS</span></a>
     </div>
     <div class="section news">
         <div class="sectionheader">
@@ -35,16 +35,13 @@
                         <p>
                             {{ substr(strip_tags($report->body), 0, 150) }}
                             {{ strlen(strip_tags($report->body)) > 50 ? "..." : "" }}
-
                         </p>
-                        <a href='{{ route('frontend.news.index.show', ['slug'=> $report->slug ])}}' class='newsproductmore'>VIEW MORE</a>
+                        <a href='{{ route('frontend.news.index.show', ['lang'=>'en', 'slug'=> $report->slug ])}}' class='newsproductmore'>VIEW MORE</a>
                     </div>
                 </div>
             @endforeach
-
-
         </div>
-        <a href="{{ route('frontend.news.index') }}" class="seealllink"><span>SEE ALL NEWS</span></a>
+        <a href="{{ route('frontend.news.index', ['lang'=>'en']) }}" class="seealllink"><span>SEE ALL NEWS</span></a>
     </div>
     <div class="section footer">
         <div class="sectionheader">
@@ -59,7 +56,4 @@
     </div>
 @endsection
 
-
-@section('title')
-    SFM
-@endsection
+@section('title', 'SFM')

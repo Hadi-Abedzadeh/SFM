@@ -11,9 +11,9 @@ use Modules\Faq\Models\Faq;
 
 class FrontendController extends Controller
 {
-    public function show_contact()
+    public function show_contact($lang = null)
     {
-        $locale = set_lang();
+        $locale = set_lang($lang);
 
         if ($locale == 'fa') {
             $contact = Contact::find(2);
@@ -24,9 +24,9 @@ class FrontendController extends Controller
         }
     }
 
-    public function about_us($brand = null)
+    public function about_us($lang = null, $brand = null)
     {
-        $locale = set_lang();
+        $locale = set_lang($lang);
 
         if ($brand == null) {
             $about = About::whereBrand('about')->firstOrFail();
@@ -47,9 +47,9 @@ class FrontendController extends Controller
         }
     }
 
-    public function faq()
+    public function faq($lang = null)
     {
-        $locale = set_lang();
+        $locale = set_lang($lang);
 
         if ($locale == 'en') {
             $faq = Faq::whereLang('en')->get();
@@ -61,9 +61,9 @@ class FrontendController extends Controller
         }
     }
 
-    public function support()
+    public function support($lang = null)
     {
-        $locale = set_lang();
+        $locale = set_lang($lang);
 
         if ($locale == 'fa') {
             return view(env('THEME_NAME') . '.frontend-fa.support.index', compact('contact'));

@@ -47,7 +47,7 @@
                                 <li><span>کنوکشن</span></li>
                             </ul>
                         </div>
-                        <div class="downlaod-button"><a href="#">دانلود کاتالوگ محصول</a></div>
+                        <div class="downlaod-button"><a href="{{ $product_list->file_url }}">دانلود کاتالوگ محصول</a></div>
                     </div>
                 </div>
             </section>
@@ -60,11 +60,9 @@
                         </div>
                         <div class="content products">
                             <div class="slider owl-carousel owl-carousel-index owl-theme">
-
-
                                 @foreach($same_products as $same_product)
                                     <div class="items">
-                                        <a href="{{ route('frontend.product.show', ['slug'=>$same_product->slug]) }}">
+                                        <a href="{{ route('frontend.product.show', ['lang'=> 'fa', 'slug'=>$same_product->slug]) }}">
                                             <img src="{{ json_decode($same_product->imageUrls)->img1 }}" title="" alt="">
                                             <span class="cost">{{ $same_product->title }}</span>
                                             <span class="more-info">اطــــلاعــاتـــــــ بــیــــشــــتـــــــر</span>
