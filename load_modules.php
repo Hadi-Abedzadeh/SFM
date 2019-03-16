@@ -2,6 +2,18 @@
 
 use Illuminate\Support\Facades\Request;
 
+function brand_segment(){
+    if (
+        request()->segment(3) == 'luxtai' OR
+        request()->segment(3) == 'komtai' OR
+        request()->segment(3) == 'expanse'
+    ) {
+        return request()->segment(3);
+    }else{
+        return '';
+    }
+}
+
 if (!function_exists('set_lang')) {
     function set_lang($lang = null)
     {
@@ -10,7 +22,7 @@ if (!function_exists('set_lang')) {
             case 'en': $set_lang = 'en'; break;
 
             case null: $set_lang = 'fa'; break;
-            default: $set_lang = 'fa'; break;
+            default: return redirect('/fa');
         }
 
         return $set_lang;

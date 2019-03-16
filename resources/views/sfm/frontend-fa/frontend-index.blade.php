@@ -107,7 +107,8 @@
                 <div class="row">
                     <div class="title">
                         <h2><span>محصولات</span> ما</h2>
-                        <span>ما چه می سازیم؟</span>
+                        <a href="{{ route('frontend.product.index', ['lang'=>'fa', 'brand' => request()->segment(3)]) }}">مشاهده
+                            لیست محصولات</a>
                     </div>
                     <div class="content products">
                         <div class="slider owl-carousel owl-carousel-index owl-theme">
@@ -138,13 +139,17 @@
                     <div class="content">
                         @foreach($news as $report)
                             <div class="news-item">
-                                <div class="img-news"><img src="/sfm-fa/assets/images/sample/test-img-news.png" alt=""
-                                                           title=""></div>
+                                <div class="img-news">
+                                    <img src="{{ $report->imageUrl }}" alt="{{ $report->title }}"
+                                         title="{{ $report->title }}">
+                                </div>
                                 <div class="content-news">
                                     <h3>{{$report->title}}</h3>
-                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
-                                        گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است
-                                        …</p>
+                                    <p>
+                                        {{ substr(strip_tags($report->body), 0, 200) }}
+                                        {{ strlen(strip_tags($report->body)) > 50 ? "..." : "" }}
+
+                                    </p>
                                     <a href="{{ route('frontend.news.index.show', ['lang'=>'fa', 'slug'=>$report->slug]) }}">اطــــــــلاعــات
                                         بــیـشــــتر</a>
                                 </div>
@@ -168,21 +173,21 @@
                     </div>
                     <div class="content">
                         <ul class="info-footer">
-                            <li>ایران، تهران، میدان شیخ بهائی، <em>برج صدف</em> ، طبقه ۱۴، واحد ۱۴۴</li>
-                            <li>۹۸+ <em>۲۱</em> ۱۱۱۰ ۸۸۲۱</li>
-                            <li>INFO@<em>LUXTAI</em>.COM</li>
+                            <li>{!! \App\Contact::find(2)->etc !!}</li>
+                            <li>{!! json_decode(\App\Contact::find(2)->tel)->tel1 !!}</li>
+                            <li>{!! json_decode(\App\Contact::find(2)->email)->email1 !!}</li>
                         </ul>
                     </div>
                     <div class="social">
                         <ul>
-                            <li><a href="#"><img src="/{{ env('THEME_NAME_FA') }}/assets/images/sample/facebook.svg"
-                                                 alt="facebook"></a></li>
-                            <li><a href="#"><img src="/{{ env('THEME_NAME_FA') }}/assets/images/sample/Twitter.svg"
-                                                 alt="Twitter"></a></li>
-                            <li><a href="#"><img src="/{{ env('THEME_NAME_FA') }}/assets/images/sample/pintrest.svg"
-                                                 alt="pintrest"></a></li>
-                            <li><a href="#"><img src="/{{ env('THEME_NAME_FA') }}/assets/images/sample/linkedin.svg"
-                                                 alt="linkedin"></a></li>
+                            <li><a href="#">
+                                    <img src="/{{ env('THEME_NAME_FA') }}/assets/images/sample/facebook.svg" alt="facebook"></a></li>
+                            <li><a href="#">
+                                    <img src="/{{ env('THEME_NAME_FA') }}/assets/images/sample/Twitter.svg" alt="Twitter"></a></li>
+                            <li><a href="#">
+                                    <img src="/{{ env('THEME_NAME_FA') }}/assets/images/sample/pintrest.svg" alt="pintrest"></a></li>
+                            <li><a href="#">
+                                    <img src="/{{ env('THEME_NAME_FA') }}/assets/images/sample/linkedin.svg" alt="linkedin"></a></li>
                         </ul>
                     </div>
                 </div>
@@ -201,6 +206,37 @@
                 </div>
             </div>
         </div>
+    </footer>
+    <footer class="site-footer-2 footer-index" role="contentinfo">
+        <div class="content-footer">
+            <div class="content">
+                <div class="title">
+                    <h2><span>تماس</span> با ما</h2>
+                    <span>چطور با ما تماس بگیرید؟</span>
+                </div>
+                <div class="info">
+                    <ul class="info-footer">
+                        <li>ایران، تهران، میدان شیخ بهائی، <em>برج صدف</em> ، طبقه ۱۴، واحد ۱۴۴</li>
+                        <li>۹۸+ <em>۲۱</em> ۱۱۱۰ ۸۸۲۱</li>
+                        <li>INFO@<em>LUXTAI</em>.COM</li>
+                    </ul>
+                </div>
+                <div class="social">
+                    <ul>
+                        <li><a href="#"><img src="/{{env('THEME_NAME_FA')}}/assets/images/sample/facebook.svg" alt="facebook"></a></li>
+                        <li><a href="#"><img src="/{{env('THEME_NAME_FA')}}/assets/images/sample/Twitter.svg" alt="Twitter"></a></li>
+                        <li><a href="#"><img src="/{{env('THEME_NAME_FA')}}/assets/images/sample/pintrest.svg" alt="pintrest"></a></li>
+                        <li><a href="#"><img src="/{{env('THEME_NAME_FA')}}/assets/images/sample/linkedin.svg" alt="linkedin"></a></li>
+                    </ul>
+                </div>
+            </div>
+            <a href="#" target="_blank" class="map-footer"><img src="/{{env('THEME_NAME_FA')}}/assets/images/sample/map.jpg" alt="" title=""></a>
+            <div class="new-nav-link"><a href="#" target="_blank">پرسش و پاسخ</a> | <a href="#" target="_blank">استخدام</a> | <a href="#" target="_blank">پشتیبانی</a></div>
+            <div class="copyright">
+                <a href="https://cafelead.agency"><img src="/{{env('THEME_NAME_FA')}}/assets/images/sample/Cafelead-copyright.svg" alt="" title=""></a>
+            </div>
+        </div>
+        <div class="bg-obj-footer2"><img src="/{{env('THEME_NAME_FA')}}/assets/images/sample/path-footer-2.svg" alt=""></div>
     </footer>
 </div>
 <script src="/{{ env('THEME_NAME_FA') }}/assets/js/jquery-1.12.4.min.js"></script>

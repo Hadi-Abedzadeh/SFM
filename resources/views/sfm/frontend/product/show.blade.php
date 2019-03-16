@@ -29,24 +29,12 @@
                 </div>
                 <div class="khat"><span>FUNCTION:</span></div>
                 <div class="row">
+
                     <div class="col">
-                        <span>ROTISSRIE</span>
-                        <span>CONVECTION</span>
-                        <span>REFLEX GLASS</span>
-                    </div>
-                    <div class="col">
-                        <span>COOKING TRAY</span>
-                        <span>LACE GRILL</span>
+                        <span>DEFROST PROGRAM</span>
                         <span>DEFROST PROGRAM</span>
                     </div>
-                    <div class="col">
-                        <span>TRAY KNOB</span>
-                        <span>OIL TRAY</span>
-                    </div>
-                    <div class="col">
-                        <span>ROTISSERIE KNOB</span>
-                        <span>INNER LAMP</span>
-                    </div>
+
                 </div>
                 <a href="{{ $product_list->file_url }}" class="btn">CATALOGE DOWNLOAD</a>
             </div>
@@ -58,15 +46,15 @@
             @foreach($same_products as $same_product)
                 <div class="product micro1 active">
                     <div class="productthumb">
-                        <img src="/{{env('THEME_NAME')}}/assets/images/product-2.png" draggable="false">
+                        <img src="{{ \GuzzleHttp\json_decode($same_product->imageUrls)->img1 }}" draggable="false">
                     </div>
                     <div class="producttitle">{{ $same_product->title }}</div>
-                    <a href="{{route('frontend.product.show',['lang'=>'en','slug' => $same_product->slug])}}" class="productmore">VIEW MORE</a>
+                    <a href="{{route('frontend.product.show',['lang'=>'en','slug' => $same_product->slug])}}"
+                       class="productmore">VIEW MORE</a>
                 </div>
             @endforeach
 
         </div>
-
     </div>
 
 @endsection

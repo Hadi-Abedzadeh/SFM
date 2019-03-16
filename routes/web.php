@@ -70,6 +70,8 @@ Route::get('/{lang?}/', function ($lang = null) {
 Route::get('/{lang?}/brand/{brand?}', function ($lang = null, $brand = null) {
 
     if ($brand == null) return redirect($lang.'/brand/luxtai');
+    if(\Modules\Product\Models\Product::whereBrand($brand)->count() <= 0) return abort(404);
+
     $locale = set_lang($lang);
 
     $contact = \App\Contact::first();

@@ -38,7 +38,7 @@
         <a href="{{ route('frontend') }}">HOME</a>
         <a href="{{ route('frontend.about.index', ['lang'=>'en', 'brand'=> $brand]) }}">ABOUT</a>
         <a href="{{ route('catalog', ['lang'=>'en']) }}">CATALOGE</a>
-        <a href="{{ route('frontend.product.index', ['lang'=>'en']) }}">PRODUCT</a>
+        <a href="{{ route('frontend.product.index', ['lang'=>'en', 'brand' => str_replace('brand-', '', $brand)]) }}">PRODUCT</a>
         <a href="{{ route('frontend.blog.index', ['lang'=>'en']) }}">BLOG</a>
         <a href="{{ route('frontend.news.index', ['lang'=>'en']) }}">NEWS</a>
         <a href="{{ route('frontend.contact-us.index', ['lang'=>'en']) }}">CONTACT</a>

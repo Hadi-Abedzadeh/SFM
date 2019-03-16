@@ -11,3 +11,5 @@ npm-debug.log
 yarn-error.log
 .idea/encodings.xml
 .idea/workspace.xml
+*.zip
+.DS_Store

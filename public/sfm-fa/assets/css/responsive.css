@@ -49,7 +49,7 @@
     body > div > footer > .content-footer > .content{margin-top: 10vw;z-index: 1;}
     body > div > footer > .content-footer > .content > .info{margin: 20px auto;width: 91%;text-align: center;}
     body > div > footer > .content-footer > .content > .info .info-footer li{text-align: center;}
-    body > div > footer > .content-footer > .content > .social{margin: 15px auto;text-align: center;}
+    body > div > footer > .content-footer > .content > .social{margin: 24px auto;text-align: center;}
     body > div > footer > .content-footer > .content > .social ul{justify-content: center;}
     body > div > footer > .content-footer > .content > .social ul li{margin-top:0;}
     body > div > footer > .content-footer > .content > .social ul li:nth-child(1){margin-top: 4px;}
@@ -70,6 +70,8 @@
 }
 
 @media only screen and (min-width: 310px) and (max-width: 500px) {
+    .site-footer{display: none;}
+    .index-page .site-footer-2{display: inherit !important;}
     #products-slider .content .slider .owl-nav,#sec3 .bg-obj-center-left{display: none;}
     #main-page>header>nav .menu .menu-text{display: none;}
     #main-page > header > nav .menu .menu-icon{margin-left:inherit;}
@@ -180,6 +182,7 @@
     body > div > footer > .content-footer > .content > .social ul li:nth-child(1){margin-top: 4px;}
     body > div > footer > .content-footer > .content > .social ul li:nth-last-child(1){margin-top: 4px;}
     body > div > footer > .content-footer > .new-nav-link{left: 0;right: 0;text-align: center;position: absolute;bottom: 55px;}
+    body > div > footer > .bg-obj-footer2 img{display: none;}
     .right-footer ~ .new-nav-link{left: 0;right: 0;text-align: center;position: absolute;bottom: 70px;}
     .right-footer ~ .new-nav-link a{color:#e92222;}
     .site-footer .copyright{filter:brightness(0.5);}

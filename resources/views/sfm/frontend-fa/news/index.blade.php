@@ -19,8 +19,8 @@
                                 <div class="content-news">
                                     <h3>{{$report->title}}</h3>
                                     <p>
-                                        {{ substr(strip_tags($report->body), 0, 100) }}
-                                        {{ strlen(strip_tags($report->body)) > 100 ? "..." : "" }}
+                                        {{ substr(strip_tags($report->body), 0, 200) }}
+                                        {{ strlen(strip_tags($report->body)) > 50 ? "..." : "" }}
                                     </p>
                                     <a href="{{ route('frontend.news.index.show', ['lang' => 'fa', 'slug' => $report->slug]) }}">اطــــــــلاعــات
                                         بــیـشــــتر</a>

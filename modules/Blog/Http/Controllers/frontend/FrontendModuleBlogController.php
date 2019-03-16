@@ -42,8 +42,13 @@ class FrontendModuleBlogController extends Controller
                 array_push($array, $s[0]);
             }
         } else {
-            $array = Post::limit(6)->whereLang($locale)->get();
+           $array = Post::limit(6)->whereLang($locale)->get();
         }
+
+
+        Post::whereId($post->id)->increment('viewCount', 1);
+
+        $array = Post::orderBy('ViewCount', sorting())->whereLang($locale)->limit(6)->get();
 
         $tags = $post->tags()->get();
 
