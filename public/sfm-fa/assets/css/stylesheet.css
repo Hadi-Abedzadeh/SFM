@@ -46,7 +46,7 @@ header .main-header .top-menu-icon {cursor: pointer;}
 #products-slider .content .slider {width: 85%;margin: auto;}
 #products-slider .content .slider .owl-stage-outer {margin: auto;}
 #products-slider .content .slider .owl-nav {position: absolute;top: 0;height: 100%;display: flex;width: 120%;right: -10%;justify-content: space-between;z-index: -1;}
-.products .items {width: auto;height: auto;position: relative;overflow: hidden;}
+.products .items {width: 300px;height: auto;position: relative;overflow: hidden;}
 .products .items::before {position: absolute;content: '';height: 100%;width: 100%;background-image: url(../images/sample/path-bg-slide.svg);background-repeat: no-repeat;background-position: left;background-size: 85%;z-index: -1;}
 .products .items a{display: block;}
 .products .items img {position: relative;top: -5px;right: 0;width: 85%;max-height: 162px;margin-bottom: 35px;}
@@ -163,6 +163,7 @@ body>div>header .header-bg-objs .bg-right-obj-header{position: absolute;z-index:
 /*  header-2  */
 
 /*  footer-2  */
+.index-page .site-footer-2{display: none;}
 body>div>.site-footer-2{position: relative;z-index: 1;margin-top: 95px;}
 body>div>footer>.content-footer{position: relative;display: flex;justify-content: space-between;flex-wrap: wrap;}
 /* body>div>footer>.bg-obj-footer2{position: absolute; bottom: 0; z-index: -1;width: 100%;height: 365px;} */
@@ -308,7 +309,7 @@ body>div>footer>.content-footer>.map-footer:hover img{transform:scale(3);}
 #notfound-page .notfound-section .search input::placeholder{font-size: 21px;font-weight: 200;color: #a8a8a8;}
 #notfound-page .notfound-section .search input:focus{box-shadow: 0 15px 30px 0 rgba(233, 34, 34, 0.15);}
 #notfound-page .notfound-section .number{z-index: -1;height: 200px;}
-#notfound-page .notfound-section .number>span{transform: rotate(3deg);text-shadow: 0 19px 63px rgba(0, 0, 0, 0.11);font-family: IRANSans;font-size: 33vw;font-weight: bold;font-style: normal;font-stretch: normal;line-height: normal;letter-spacing: normal;text-align: center;color: #ffffff;display: block;position: absolute;top: 6vw;z-index: -1;}
+#notfound-page .notfound-section .number>span{transform: rotate(3deg);text-shadow: 0 19px 63px rgba(0, 0, 0, 0.11);font-family: IRANSans,iranyekan;font-size: 33vw;font-weight: bold;font-style: normal;font-stretch: normal;line-height: normal;letter-spacing: normal;text-align: center;color: #ffffff;display: block;position: absolute;top: 6vw;z-index: -1;}
 /*  404  */
 
 

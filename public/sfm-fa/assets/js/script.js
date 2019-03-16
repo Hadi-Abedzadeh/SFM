@@ -1,7 +1,21 @@
 $(document).ready(function(){
+    $(document).on('click','nav .menu .menu-icon,#fullmenu',function(){
+        $('html').toggleClass('fullmenu-active');
+    });
+});
+
+$(document).ready(function(){
+    $('.products-button li').on('click', function() {
+        var productData = $(this).data('product');
+        $('.item,.products-button li').removeClass('active');
+        $('.item.'+productData).addClass('active');
+        $(this).addClass('active');
+    });
+});
+
+$(document).ready(function(){
     // Add smooth scrolling to all links
     $("a").on('click', function(event) {
-
         // Make sure this.hash has a value before overriding default behavior
         if (this.hash !== "") {
             // Prevent default anchor click behavior
@@ -187,22 +201,6 @@ $('.img-parallax').each(function(){
         }
     });
 });
-
-$(document).ready(function(){
-    $(document).on('click','nav .menu .menu-icon,#fullmenu',function(){
-        $('html').toggleClass('fullmenu-active');
-    });
-});
-
-$(document).ready(function(){
-    $('.products-button li').on('click', function() {
-        var productData = $(this).data('product');
-        $('.item,.products-button li').removeClass('active');
-        $('.item.'+productData).addClass('active');
-        $(this).addClass('active');
-    });
-});
-
 
 
 //FAQ

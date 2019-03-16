@@ -207,6 +207,37 @@
             </div>
         </div>
     </footer>
+    <footer class="site-footer-2 footer-index" role="contentinfo">
+        <div class="content-footer">
+            <div class="content">
+                <div class="title">
+                    <h2><span>تماس</span> با ما</h2>
+                    <span>چطور با ما تماس بگیرید؟</span>
+                </div>
+                <div class="info">
+                    <ul class="info-footer">
+                        <li>ایران، تهران، میدان شیخ بهائی، <em>برج صدف</em> ، طبقه ۱۴، واحد ۱۴۴</li>
+                        <li>۹۸+ <em>۲۱</em> ۱۱۱۰ ۸۸۲۱</li>
+                        <li>INFO@<em>LUXTAI</em>.COM</li>
+                    </ul>
+                </div>
+                <div class="social">
+                    <ul>
+                        <li><a href="#"><img src="/{{env('THEME_NAME_FA')}}/assets/images/sample/facebook.svg" alt="facebook"></a></li>
+                        <li><a href="#"><img src="/{{env('THEME_NAME_FA')}}/assets/images/sample/Twitter.svg" alt="Twitter"></a></li>
+                        <li><a href="#"><img src="/{{env('THEME_NAME_FA')}}/assets/images/sample/pintrest.svg" alt="pintrest"></a></li>
+                        <li><a href="#"><img src="/{{env('THEME_NAME_FA')}}/assets/images/sample/linkedin.svg" alt="linkedin"></a></li>
+                    </ul>
+                </div>
+            </div>
+            <a href="#" target="_blank" class="map-footer"><img src="/{{env('THEME_NAME_FA')}}/assets/images/sample/map.jpg" alt="" title=""></a>
+            <div class="new-nav-link"><a href="#" target="_blank">پرسش و پاسخ</a> | <a href="#" target="_blank">استخدام</a> | <a href="#" target="_blank">پشتیبانی</a></div>
+            <div class="copyright">
+                <a href="https://cafelead.agency"><img src="/{{env('THEME_NAME_FA')}}/assets/images/sample/Cafelead-copyright.svg" alt="" title=""></a>
+            </div>
+        </div>
+        <div class="bg-obj-footer2"><img src="/{{env('THEME_NAME_FA')}}/assets/images/sample/path-footer-2.svg" alt=""></div>
+    </footer>
 </div>
 <script src="/{{ env('THEME_NAME_FA') }}/assets/js/jquery-1.12.4.min.js"></script>
 <script src="/{{ env('THEME_NAME_FA') }}/assets/js/script.js" defer="defer"></script>
