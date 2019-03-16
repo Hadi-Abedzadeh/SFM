@@ -107,7 +107,7 @@
                 <div class="row">
                     <div class="title">
                         <h2><span>محصولات</span> ما</h2>
-                        <a href="{{ route('frontend.product.index', ['lang'=>'fa', 'brand' => request()->segment(2)]) }}">مشاهده لیست محصولات</a>
+                        <a href="{{ route('frontend.product.index', ['lang'=>'fa', 'brand' => request()->segment(3)]) }}">مشاهده لیست محصولات</a>
                     </div>
                     <div class="content products">
                         <div class="slider owl-carousel owl-carousel-index owl-theme">
