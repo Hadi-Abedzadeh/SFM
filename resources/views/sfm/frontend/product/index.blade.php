@@ -46,7 +46,7 @@
 
 
         @foreach($products as $product) 
-	<a  href="{{route('frontend.product.show',['slug'=>$product->slug])}}" class="product A-{{$product->category}} active">
+	<a  href="{{route('frontend.product.show',['lang' => 'en', 'slug'=>$product->slug])}}" class="product A-{{$product->category}} active">
 	<div class="productthumb"><img src="/{{env('THEME_NAME')}}/assets/images/product-2.png" draggable="false"></div>
 	<div class="producttitle">9090</div>
 	<span class="productmore">VIEW MORE</span>

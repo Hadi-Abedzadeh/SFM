@@ -18,7 +18,7 @@
                             {{ substr(strip_tags($post->body), 0, 100) }}
                             {{ strlen(strip_tags($post->body)) > 100 ? "..." : "" }}
                         </p>
-                        <a href="{{ route('frontend.blog.index.slug', ['slug' => $post->slug]) }}" class="newsproductmore">VIEW MORE</a>
+                        <a href="{{ route('frontend.blog.index.slug', ['lang'=>'en','slug' => $post->slug]) }}" class="newsproductmore">VIEW MORE</a>
                     </div>
 
                 </div>
@@ -40,7 +40,9 @@
         $(function() {
             $('.infinite-scroll').jscroll({
                 autoTrigger: true,
-                loadingHtml: '<img class="center-block" src="/images/loading.gif" alt="Loading..." />',
+                loadingHtml: '<div class="loading">\n' +
+                    '<div class="icon"></div><span>SEE MORE ...</span>\n' +
+                    '</div>',
                 padding: 0,
                 nextSelector: '.pagination li.active + li a',
                 contentSelector: 'div.infinite-scroll',

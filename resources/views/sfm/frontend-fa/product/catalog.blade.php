@@ -13,11 +13,10 @@
             <div class="products">
                 <div class="row">
                     @foreach($products as $product)
-
                         <div class="col-xl-8 col-lg-8 col-md-12 col-sm-24 item active">
                             <div class="items">
-                                <a href="{{ route('frontend.product.show', ['slug'=>$product->slug]) }}">
-                                    <img src="/{{env('THEME_NAME_FA')}}/assets/images/sample/product-1.png" title="" alt="">
+                                <a href="{{ route('frontend.product.show', ['lang'=>'fa', 'slug'=>$product->slug]) }}">
+                                    <img src="{{ json_decode($product->imageUrls)->img1 }}" title="" alt="">
                                     <span class="cost">{{ $product->title }}</span>
                                     <span class="more-info">اطــــلاعــاتـــــــ بــیــــشــــتـــــــر</span>
                                 </a>
@@ -32,6 +31,4 @@
         </div></main>
     @endsection
 
-@section('title')
-    محصولات
-    @endsection
+@section('title', 'محصولات')

@@ -14,10 +14,10 @@ class FrontendModuleProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($brand = null)
+    public function index($lang = null, $brand = null)
     {
 
-        $locale = set_lang();
+        $locale = set_lang($lang);
         if ($brand == null) {
             $products = Product_list::whereLang($locale)->get();
         }else{
@@ -59,9 +59,9 @@ class FrontendModuleProductController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function show($product_list)
+    public function show($lang = null,$product_list)
     {
-        $locale = set_lang();
+        $locale = set_lang($lang);
         $product_list = Product_list::whereSlug($product_list)->whereLang($locale)->firstOrFail();
         $same_products = Product_list::whereProduct_id($product_list->product_id)->whereLang($locale)->orderBy('id', 'desc')->limit(6)->get();
 
@@ -107,10 +107,10 @@ class FrontendModuleProductController extends Controller
         //
     }
 
-    public function catalog($slug)
+    public function catalog($lang = null, $slug)
     {
 
-        $locale = set_lang();
+        $locale = set_lang($lang);
         if ($locale == 'fa') {
 
             $product = Product::whereSlug($slug)->first();

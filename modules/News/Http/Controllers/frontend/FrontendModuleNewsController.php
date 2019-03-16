@@ -13,17 +13,18 @@ class FrontendModuleNewsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($lang = null)
     {
-        $locale = set_lang();
+        $locale = set_lang($lang);
         $news = News::whereLang($locale)->orderBy('id', 'desc')->paginate(env('PAGINATE_COUNT'));
-        if($locale == 'en'){
-            return view(env('THEME_NAME') . '.frontend.news.index', compact('news'));
-        }else{
-            return view(env('THEME_NAME') . '.frontend-fa.news.index', compact('news'));
+        $most_views = News::whereLang($locale)->orderBy('viewCount', sorting())->limit(6)->get();
+
+        if ($locale == 'en') {
+            return view(env('THEME_NAME') . '.frontend.news.index', compact('news', 'most_views'));
+        } else {
+            return view(env('THEME_NAME') . '.frontend-fa.news.index', compact('news', 'most_views'));
         }
     }
-
 
 
     /**
@@ -53,17 +54,16 @@ class FrontendModuleNewsController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function show($slug)
+    public function show($lang = null, $news)
     {
-        News::whereSlug($slug)->increment('viewCount', 1);
-        $locale = set_lang();
-        if($locale == 'en'){
-            $news = News::whereSlug($slug)->whereLang($locale)->firstOrFail();
-            return view(env('THEME_NAME'). '.frontend.news.show', compact('news'));
-        }else{
-            $news = News::whereSlug($slug)->whereLang($locale)->firstOrFail();
-            return view(env('THEME_NAME'). '.frontend-fa.news.show', compact('news'));
+        $locale = set_lang($lang);
+        $most_views = News::whereLang($locale)->orderBy('viewCount', sorting())->limit(6)->get();
 
+        News::whereSlug($news)->increment('viewCount', 1);
+        if ($locale == 'en') {
+            return view(env('THEME_NAME') . '.frontend.news.show', compact('news', 'most_views'));
+        } else {
+            return view(env('THEME_NAME') . '.frontend-fa.news.show', compact('news', 'most_views'));
         }
     }
 

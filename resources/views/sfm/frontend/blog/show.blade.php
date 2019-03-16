@@ -16,25 +16,27 @@
         <div class="swipeslider">
             <h2>SIMILAR <span>POSTS</span></h2>
             <div class="owl-carousel">
-                @for($i =0; $i <=2;$i++)
+
+                @foreach($array as $arra)
                     <div class="newsproduct">
                         <div class="newsproductthumb">
                             <img src="/{{env('THEME_NAME')}}/assets/images/newsthumb.jpg" draggable="false">
                         </div>
                         <div class="newsproductcontent">
-                            <h4>NEW POST</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua …</p>
-                            <a href="#" class="newsproductmore">VIEW MORE</a>
+                            <h4>{{ $arra->title }}</h4>
+                            <p>
+                                {{ substr(strip_tags($arra->body), 0, 200) }}
+                                {{ strlen(strip_tags($arra->body)) > 50 ? "..." : "" }}
+                            </p>
+                            <a href="{{ route('frontend.blog.index.slug', ['lang'=>'en','slug' => $arra->slug]) }}" class="newsproductmore">VIEW MORE</a>
                         </div>
                     </div>
-                @endfor
+                @endforeach
             </div>
         </div>
 
     </div>
 @endsection
 
+@section('title', 'Blog' .$post->title)
 
-@section('title')
-	Blog {{$post->title}}
-@endsection

@@ -5,8 +5,8 @@
         <div class="container">
             <section class="single-section">
                 <div class="title">
-                    <h2><span>جذب</span> نیرو</h2>
-                    <div class="button"><a href="{{ route('frontend.blog.index') }}"><span>بازگشت به صفحه قبل</span></a>
+                    <h2><span>بلاگ</span></h2>
+                    <div class="button"><a href="{{ route('frontend.blog.index',['lang'=>'fa']) }}"><span>بازگشت به صفحه قبل</span></a>
                     </div>
                 </div>
                 <div class="content">
@@ -22,16 +22,31 @@
                     <br><br>
                     <hr>
                     <br><br>
-                    <div class="tags">
-                        <div class="title">
-                            <h4>برچسب ها</h4>
+                    {{--<div class="tags">--}}
+                    {{--<div class="title">--}}
+                    {{--<h4>دسته بندی</h4>--}}
+                    {{--</div>--}}
+                    {{--<ul>--}}
+                    {{--@foreach($post->categories as $category)--}}
+                    {{--<li><a href="{{ route('category', ['']) }}">{{ $category->name }}</a></li>--}}
+                    {{--@endforeach--}}
+                    {{--</ul>--}}
+                    {{--</div>--}}
+
+                    @if($tags->count() > 0)
+                        <div class="tags">
+                            <div class="title">
+                                <h4>برچسب ها</h4>
+                            </div>
+                            <ul>
+                                @foreach($tags as $tag)
+                                    <a href="{{ route('tag.show', ['lang'=>'fa', 'slug' => $tag->slug]) }}">{{$tag->name}}</a>
+                                    @if(!$loop->last) ,@endif
+                                @endforeach
+                            </ul>
                         </div>
-                        <ul>
-                            @foreach($post->categories as $category)
-                                <li><a href="{{ route('category', ['']) }}">{{ $category->name }}</a></li>
-                            @endforeach
-                        </ul>
-                    </div>
+                    @endif
+
                 </div>
             </section>
 
@@ -42,18 +57,20 @@
                 <div class="content">
                     <div class="slider owl-carousel owl-carousel-blog owl-theme">
 
-                        <div class="news-item">
-                            <div class="img-news"><img
-                                    src="/{{env('THEME_NAME_FA')}}/assets/images/sample/test-img-news.png" alt=""
-                                    title=""></div>
-                            <div class="content-news">
-                                <h3>نمایشگاه تهران</h3>
-                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
-                                    گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است …</p>
-                                <a href="#">اطــــــــلاعــات بــیـشــــتر</a>
+                        @foreach($array as $p)
+                            <div class="news-item">
+                                <div class="img-news">
+                                    <img src="{{ $p->imageUrl }}" alt="" title=""></div>
+                                <div class="content-news">
+                                    <h3>{{ $p->title }}</h3>
+                                    <p>
+                                        {{ substr(strip_tags($p->body), 0, 200) }}
+                                        {{ strlen(strip_tags($p->body)) > 50 ? "..." : "" }}
+                                    </p>
+                                    <a href="{{ route('frontend.blog.index.slug', ['lang'=>'fa', 'slug' => $p->slug]) }}">اطــــــــلاعــات بــیـشــــتر</a>
+                                </div>
                             </div>
-                        </div>
-
+                        @endforeach
                     </div>
                 </div>
             </section>
@@ -65,5 +82,5 @@
 
 
 @section('title')
-بلاگ
+    بلاگ
 @endsection

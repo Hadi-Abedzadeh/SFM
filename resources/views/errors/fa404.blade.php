@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html dir="rtl" lang="fa-IR" class="no-js">
 
@@ -22,14 +23,15 @@
     <!-- Site Unique background Color -->
     <meta name="screen-orientation" content="portrait" />
     <!-- Author Name -->
-    <meta name="author" content="-Aghaei">
+    <meta itemprop="name" content="CafeLead" />
+    <meta name="author" content="Alireza-Aghaei">
     <!-- Site orientation in UC Browser -->
     <meta name="full-screen" content="yes" />
     <meta name="imagemode" content="force" />
     <meta name="layoutmode" content="fitscreen" />
     <meta name="wap-font-scale" content="no" />
     <!-- Site index link -->
-    <title>@yield('title')</title>
+    <title>لوکستای | ۴۰۴</title>
     <!--  slider  -->
     <link rel="stylesheet" href="/{{env('THEME_NAME_FA')}}/assets/owl-carousel/css/owl.carousel.min.css" />
     <link rel="stylesheet" href="/{{env('THEME_NAME_FA')}}/assets/css/reset.min.css" />
@@ -58,29 +60,35 @@
                     <span></span>
                 </div>
                 <div class="menu-text"><span>فهرست</span><span>بستن</span></div>
-                <div class="menu-language">
-                    <div class="selected-lang">
-                        <img src="/{{env('THEME_NAME_FA')}}/assets/images/sample/iran.svg" alt="">
-                        <span>فارسی</span>
-                        <img src="/{{env('THEME_NAME_FA')}}/assets/images/sample/arrow-bottom.svg" alt="">
-                    </div>
-                    <div class="more-lang">
-                        <a href="{{ change_lang('fa') }}">
-                            <img src="/{{env('THEME_NAME_FA')}}/assets/images/sample/english.svg" alt="">
-                            <span>انگلیسی</span>
-                        </a>
-                    </div>
-                </div>
             </div>
             <a class="logo" href="#"></a>
         </nav>
-        @include('sfm.frontend-fa.nav-fa')
+        <div id="fullmenu">
+            <div class="fullmenulink">
+                <a href="{{ route('frontend.about.index', ['lang'=>'fa']) }}">درباره ما</a>
+                <a href="{{ route('catalog', ['lang'=>'fa']) }}">کاتالوگ</a>
+                <a href="{{ route('frontend.product.index', ['lang'=>'fa']) }}">محصولات</a>
+                <a href="{{ route('frontend.blog.index', ['lang'=>'fa']) }}">بلاگ</a>
+                <a href="{{ route('frontend.news.index', ['lang'=>'fa']) }}">اخبار</a>
+                <a href="{{ route('frontend.contact-us.index', ['lang'=>'fa']) }}">تماس با ما</a>
+            </div>
+            <div class="fullmenucircle1"></div>
+            <div class="fullmenucircle2"></div>
+        </div>
         <div class="header-bg-objs">
             <div class="bg-obj-header"><img src="/{{env('THEME_NAME_FA')}}/assets/images/sample/bg-footer-obj.jpg" alt=""></div>
             <div class="bg-right-obj-header"><img src="/{{env('THEME_NAME_FA')}}/assets/images/sample/Top-Right-Object.svg" alt=""></div>
         </div>
     </header>
-            @yield('content')
+    <main id="notfound-page">
+        <div class="container">
+            <section class="notfound-section">
+                <div class="title"><p>صفحه مورد نظر شما <span>یافت نشد</span> !</p></div>
+                <div class="search"><input type="search" id="site-search" name="page_search" placeholder="صفحه مورد نظر خود را جست و جو کنید ..."></div>
+                <div class="number"><span>۴۰۴</span></div>
+            </section>
+        </div>
+    </main>
     <footer class="site-footer-2 footer-index" role="contentinfo">
         <div class="content-footer">
             <div class="content">
@@ -90,9 +98,9 @@
                 </div>
                 <div class="info">
                     <ul class="info-footer">
-                        <li>ایران، تهران، میدان شیخ بهائی، <em>برج صدف</em> ، طبقه ۱۴، واحد ۱۴۴</li>
-                        <li>۹۸+ <em>۲۱</em> ۱۱۱۰ ۸۸۲۱</li>
-                        <li>INFO@<em>LUXTAI</em>.COM</li>
+                        {{--<li>ایران، تهران، میدان شیخ بهائی، <em>برج صدف</em> ، طبقه ۱۴، واحد ۱۴۴</li>--}}
+                        {{--<li>۹۸+ <em>۲۱</em> ۱۱۱۰ ۸۸۲۱</li>--}}
+                        {{--<li>INFO@<em>LUXTAI</em>.COM</li>--}}
                     </ul>
                 </div>
                 <div class="social">
@@ -105,7 +113,6 @@
                 </div>
             </div>
             <a href="#" target="_blank" class="map-footer"><img src="/{{env('THEME_NAME_FA')}}/assets/images/sample/map.jpg" alt="" title=""></a>
-            <div class="new-nav-link"><a href="#" target="_blank">پرسش و پاسخ</a> | <a href="#" target="_blank">استخدام</a> | <a href="#" target="_blank">پشتیبانی</a></div>
             <div class="copyright">
                 <a href="https://cafelead.agency"><img src="/{{env('THEME_NAME_FA')}}/assets/images/sample/Cafelead-copyright.svg" alt="" title=""></a>
             </div>
@@ -117,9 +124,6 @@
 <script src="/{{env('THEME_NAME_FA')}}/assets/js/script.js" defer="defer"></script>
 <!--  slider  -->
 <script src="/{{env('THEME_NAME_FA')}}/assets/owl-carousel/js/owl.carousel.min.js"></script>
-
-@yield('infiniteScroll')
-
 </body>
 
 </html>

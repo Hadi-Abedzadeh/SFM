@@ -40,9 +40,13 @@ Route::prefix('backend')->middleware('auth')->group(function () {
 
 });
 
-Route::get('/blog', 'frontend\FrontendModuleBlogController@index')->name('frontend.blog.index');
-Route::get('/blog/{postSlug}', 'frontend\FrontendModuleBlogController@show')->name('frontend.blog.index.slug');
+Route::get('/{lang?}/blog', 'frontend\FrontendModuleBlogController@index')->name('frontend.blog.index');
+Route::get('/{lang?}/blog/{postSlug}', 'frontend\FrontendModuleBlogController@show')->name('frontend.blog.index.slug');
 Route::get('/blog/category/{categorySlug}', 'frontend\FrontendModuleBlogController@category')->name('category');
+
+Route::get('/tags', 'frontend\TagController@index')->name('tag');
+Route::get('/tag/{tagSlug}', 'frontend\TagController@show')->name('tag.show');
+
 
 //Route::namespace('frontend')->prefix('blog')->group(function () {
 //    Route::resource('/', 'BlogController');

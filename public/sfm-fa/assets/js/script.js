@@ -23,6 +23,10 @@ $(document).ready(function(){
     });
 });
 
+$(document).on('click','.more-button',function(){
+    var aca2=$(this).data('action');
+   $.ajax('/fa/news/?page=1',function(result){alert(result);});
+});
 
 // just get 11 number input
 var alireza = document.querySelectorAll(".alireza_validator input"),i;

@@ -40,28 +40,41 @@ Route::get('/lang/{lang}', function ($lang) {
             $select_lang = 'fa';
     }
 
+    $url = Request::url();
+    if($select_lang == 'en')
+    $url = str_replace("/lang/$select_lang", '/fa/', $url );
+else
+    $url = str_replace("/lang/$select_lang", '/en/', $url );
+
+
+//    return  Request::segment(1);
+
     \Illuminate\Support\Facades\Request::session()->put('lang', $select_lang);
 
-    return redirect()->back();
+    return $url;
+    return redirect($url);
 });
 
-Route::get('/', function () {
-    $locale = set_lang();
+Route::get('/{lang?}/', function ($lang = null) {
+
+    if ($lang == null)
+        return redirect('/fa');
+
+    $locale = set_lang($lang);
     if ($locale == 'fa')
         return view(env('THEME_NAME') . '.frontend-fa.intro');
     else
         return view(env('THEME_NAME') . '.frontend.intro');
 });
 
-Route::get('/brand/{brand?}', function ($brand = null) {
+Route::get('/{lang?}/brand/{brand?}', function ($lang = null, $brand = null) {
 
-    if ($brand == null) return redirect('/brand/luxtai');
+    if ($brand == null) return redirect($lang.'/brand/luxtai');
+    $locale = set_lang($lang);
 
-    $locale = set_lang();
     $contact = \App\Contact::first();
     $news = \Modules\News\Models\News::whereLang($locale)->orderBy('id', 'DESC')->limit(3)->get();
 
-	
     if ($locale == 'fa') {
         $products = \Modules\Product\Models\Product::whereLang('fa')->whereBrand($brand)->limit(env('PAGINATE_COUNT'))->get();
         return view(env('THEME_NAME') . '.frontend-fa.frontend-index', compact('contact', 'news', 'products', 'brand'));
@@ -69,9 +82,7 @@ Route::get('/brand/{brand?}', function ($brand = null) {
         return view(env('THEME_NAME') . '.frontend.frontend-index', compact('contact', 'news', 'brand'));
     }
 
-	
 
-	
 })->name('frontend');
 
 Route::prefix('backend')->middleware('auth')->group(function () {
@@ -86,17 +97,15 @@ Route::prefix('backend')->middleware('auth')->group(function () {
 
 });
 
-
 Route::get('/backend', 'backend\BackendController@index');
-Route::get('/contact-us', 'frontend\FrontendController@show_contact')->name('frontend.contact-us.index');
-Route::get('/about-us/{brand?}', 'frontend\FrontendController@about_us')->name('frontend.about.index');
-Route::get('/faq', 'frontend\FrontendController@faq');
-Route::get('/support', 'frontend\FrontendController@support')->name('support');
+Route::get('/{lang?}/contact-us', 'frontend\FrontendController@show_contact')->name('frontend.contact-us.index');
+Route::get('/{lang?}/about-us/{brand?}', 'frontend\FrontendController@about_us')->name('frontend.about.index');
+Route::get('/{lang?}/faq', 'frontend\FrontendController@faq')->name('faq');
+Route::get('/{lang?}/support', 'frontend\FrontendController@support')->name('support');
 Route::post('/support', 'frontend\FrontendController@support_submit');
 
-Route::get('/catalog', function () {
-
-    $locale = set_lang();
+Route::get('/{lang?}/catalog', function ($lang = null) {
+    $locale = set_lang($lang);
     if ($locale == 'fa') {
         return view(env('THEME_NAME') . '.frontend-fa.catalog.index', compact('news'));
     } else {
@@ -106,7 +115,7 @@ Route::get('/catalog', function () {
 })->name('catalog');
 
 
-Route::get('/logout', function (){
+Route::get('/logout', function () {
     Auth::logout();
     return redirect('/login');
 });

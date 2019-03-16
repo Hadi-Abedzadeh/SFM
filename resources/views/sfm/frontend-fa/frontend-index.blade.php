@@ -64,7 +64,7 @@
                         <img src="/{{ env('THEME_NAME_FA') }}/assets/images/sample/arrow-bottom.svg" alt="">
                     </div>
                     <div class="more-lang">
-                        <a href="/lang/en">
+                        <a href="{{ change_lang('fa') }}">
                             <img src="/{{ env('THEME_NAME_FA') }}/assets/images/sample/english.svg" alt="">
                             <span>انگلیسی</span>
                         </a>
@@ -73,34 +73,36 @@
             </div>
             <a class="logo" href="#"></a>
         </nav>
-		<div id="fullmenu">
-		<div class="fullmenulink">
-			<a href="{{ route('frontend') }}">صفحه اصلی</a>
-			<a href="{{ route('frontend.about.index') }}">درباره ما</a>
-			<a href="{{ route('catalog') }}">کاتالوگ</a>
-			<a href="{{ route('frontend.product.index') }}">محصولات</a>
-			<a href="{{ route('frontend.blog.index') }}">بلاگ</a>
-			<a href="{{ route('frontend.news.index') }}">اخبار</a>
-			<a href="{{ route('frontend.contact-us.index') }}">تماس با ما</a>
-		</div>
-		<div class="fullmenucircle1"></div>
-		<div class="fullmenucircle2"></div>
-		</div>
+        <div id="fullmenu">
+            <div class="fullmenulink">
+                <a href="{{ route('frontend') }}">صفحه اصلی</a>
+                <a href="{{ route('frontend.about.index', ['lang'=>'fa']) }}">درباره ما</a>
+                <a href="{{ route('catalog', ['lang'=>'fa']) }}">کاتالوگ</a>
+                <a href="{{ route('frontend.product.index', ['lang'=>'fa']) }}">محصولات</a>
+                <a href="{{ route('frontend.blog.index', ['lang'=>'fa']) }}">بلاگ</a>
+                <a href="{{ route('frontend.news.index', ['lang'=>'fa']) }}">اخبار</a>
+                <a href="{{ route('frontend.contact-us.index', ['lang'=>'fa']) }}">تماس با ما</a>
+            </div>
+            <div class="fullmenucircle1"></div>
+            <div class="fullmenucircle2"></div>
+        </div>
         {{-- @include('sfm.frontend-fa.nav-fa') --}}
     </header>
     <main>
         <section id="sec1">
             @switch($brand)
                 @case('luxtai')
-                    {{ create_box_fa(4) }} @break
+                {{ create_box_fa(4) }} @break
                 @case('komtai')
-                    {{ create_box_fa(6) }} @break
+                {{ create_box_fa(6) }} @break
                 @case('expanse')
-                    {{ create_box_fa(5) }} @break
+                {{ create_box_fa(5) }} @break
             @endswitch
         </section>
         <section id="products-slider">
-            <div class="bg-obj-right"><img src="/{{ env('THEME_NAME_FA') }}/assets/images/sample/path-2.svg" alt="" title="" width="200px"></div>
+            <div class="bg-obj-right">
+                <img src="/{{ env('THEME_NAME_FA') }}/assets/images/sample/path-2.svg" alt="" title="" width="200px">
+            </div>
             <div class="container">
                 <div class="row">
                     <div class="title">
@@ -111,9 +113,8 @@
                         <div class="slider owl-carousel owl-carousel-index owl-theme">
                             @foreach($products as $product)
                                 <div class="items">
-                                    <a href="{{ route('frontend.product.catalog', ['slug'=> $product->slug]) }}">
-                                        <img src="{{ $product->imageUrl }}"
-                                             title="" alt="">
+                                    <a href="{{ route('frontend.product.catalog', ['lang'=>'fa', 'slug'=> $product->slug]) }}">
+                                        <img src="{{ $product->imageUrl }}" title="" alt="">
                                         <span class="cost">{{ $product->title }}</span>
                                         <span class="more-info">اطــــلاعــاتـــــــ بــیــــشــــتـــــــر</span>
                                     </a>
@@ -125,13 +126,14 @@
             </div>
         </section>
         <section id="sec3">
-            <div class="bg-obj-center-left"><img src="/{{ env('THEME_NAME_FA') }}/assets/images/sample/photo-2.jpg"
-                                                 data-speed="-1" class="img-parallax" alt="" title=""></div>
+            <div class="bg-obj-center-left">
+                <img src="/{{ env('THEME_NAME_FA') }}/assets/images/sample/photo-2.jpg" data-speed="-1"
+                     class="img-parallax" alt="" title=""></div>
             <div class="container">
                 <div class="row">
                     <div class="title">
                         <h2><span>اخبار</span> ما</h2>
-                        <a href="{{ route('frontend.news.index') }}">مشاهده لیست اخبار</a>
+                        <a href="{{ route('frontend.news.index', ['lang'=>'fa']) }}">مشاهده لیست اخبار</a>
                     </div>
                     <div class="content">
                         @foreach($news as $report)
@@ -143,7 +145,7 @@
                                     <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
                                         گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است
                                         …</p>
-                                    <a href="{{ route('frontend.news.index.show', ['slug'=>$report->slug]) }}">اطــــــــلاعــات
+                                    <a href="{{ route('frontend.news.index.show', ['lang'=>'fa', 'slug'=>$report->slug]) }}">اطــــــــلاعــات
                                         بــیـشــــتر</a>
                                 </div>
                             </div>
@@ -155,8 +157,8 @@
     </main>
 
     <footer class="site-footer footer-index" role="contentinfo">
-        <div class="bg-obj-footer"><img src="/{{ env('THEME_NAME_FA') }}/assets/images/sample/bg-footer-obj.jpg"
-                                        title="" alt=""></div>
+        <div class="bg-obj-footer">
+            <img src="/{{ env('THEME_NAME_FA') }}/assets/images/sample/bg-footer-obj.jpg" title="" alt=""></div>
         <div class="container">
             <div class="row">
                 <div class="right-footer">
@@ -189,7 +191,8 @@
                                                      width="480px" title="" alt=""></div>
                 </a>
                 <div class="new-nav-link">
-                    <a href="#" target="_blank">پرسش و پاسخ</a> | <a href="#" target="_blank">استخدام</a> | <a href="#" target="_blank">پشتیبانی</a>
+                    <a href="#" target="_blank">پرسش و پاسخ</a> | <a href="#" target="_blank">استخدام</a> | <a href="#"
+                                                                                                               target="_blank">پشتیبانی</a>
                 </div>
                 <div class="copyright">
                     <a href="https://cafelead.agency"><img
@@ -203,6 +206,7 @@
 <script src="/{{ env('THEME_NAME_FA') }}/assets/js/jquery-1.12.4.min.js"></script>
 <script src="/{{ env('THEME_NAME_FA') }}/assets/js/script.js" defer="defer"></script>
 <script src="/{{ env('THEME_NAME_FA') }}/assets/owl-carousel/js/owl.carousel.min.js"></script>
+
 </body>
 
 </html>

@@ -21,5 +21,5 @@ Route::prefix('backend')->middleware('auth')->group(function () {
 
 });
 
-Route::get('/news', 'frontend\FrontendModuleNewsController@index')->name('frontend.news.index');
-Route::get('/news/{slug}', 'frontend\FrontendModuleNewsController@show')->name('frontend.news.index.show');
+Route::get('/{lang?}/news', 'frontend\FrontendModuleNewsController@index')->name('frontend.news.index');
+Route::get('/{lang?}/news/{newsSlug}', 'frontend\FrontendModuleNewsController@show')->name('frontend.news.index.show');
