@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="singleheader">
-        <div class="singlecover"><img src="/{{env('THEME_NAME')}}/assets/images/background.jpg"></div>
+        <div class="singlecover"><img src="{{ $post->imageUrl }}"></div>
         <a href="{{ route('frontend.blog.index') }}" class="singleback"><span class="icon-back"></span>BACK TO BLOG</a>
     </div>
     <div class="singleheaderclear"></div>
@@ -20,7 +20,7 @@
                 @foreach($array as $arra)
                     <div class="newsproduct">
                         <div class="newsproductthumb">
-                            <img src="/{{env('THEME_NAME')}}/assets/images/newsthumb.jpg" draggable="false">
+                            <img src="{{ $arra->imageUrl }}" draggable="false">
                         </div>
                         <div class="newsproductcontent">
                             <h4>{{ $arra->title }}</h4>

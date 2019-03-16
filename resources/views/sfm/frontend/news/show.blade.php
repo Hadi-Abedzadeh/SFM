@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="singleheader">
-        <div class="singlecover"><img src="/{{env('THEME_NAME')}}/assets/images/background.jpg"></div>
+        <div class="singlecover"><img src="{{ $news->imageUrl }}"></div>
         <a href="{{ route('frontend.news.index', ['lang'=>'en']) }}" class="singleback"><span class="icon-back"></span>BACK
             TO NEWS</a>
     </div>

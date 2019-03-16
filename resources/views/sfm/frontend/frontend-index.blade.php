@@ -19,7 +19,7 @@
         <div class="container">
             {{ create_box_second(2) }}
         </div>
-        <a href="{{route('frontend.product.index',['lang' =>'en'])}}" class="seealllink"><span>SEE ALL PRODUCTS</span></a>
+        <a href="{{route('frontend.product.index',['lang' =>'en', 'brand' => request()->segment(3)])}}" class="seealllink"><span>SEE ALL PRODUCTS</span></a>
     </div>
     <div class="section news">
         <div class="sectionheader">
@@ -49,7 +49,9 @@
             <h3>HOW TELL TO US?</h3>
         </div>
         <div class="footercontent">
-            {!! \App\Contact::first()->etc !!}
+            {!! \App\Contact::find(1)->etc !!}<br>
+            {!! json_decode(\App\Contact::find(1)->tel)->tel1 !!} <br>
+            {!! json_decode(\App\Contact::find(1)->email)->email1 !!}
 
         </div>
 

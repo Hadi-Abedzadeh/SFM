@@ -59,7 +59,8 @@ class FrontendModuleNewsController extends Controller
         $locale = set_lang($lang);
         $most_views = News::whereLang($locale)->orderBy('viewCount', sorting())->limit(6)->get();
 
-        News::whereSlug($news)->increment('viewCount', 1);
+        News::whereId($news->id)->increment('viewCount', 1);
+
         if ($locale == 'en') {
             return view(env('THEME_NAME') . '.frontend.news.show', compact('news', 'most_views'));
         } else {
