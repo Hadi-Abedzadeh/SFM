@@ -10,7 +10,7 @@ if (!function_exists('set_lang')) {
             case 'en': $set_lang = 'en'; break;
 
             case null: $set_lang = 'fa'; break;
-            default: $set_lang = 'fa'; break;
+            default: return redirect('/fa');
         }
 
         return $set_lang;
