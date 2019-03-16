@@ -5,6 +5,11 @@ if($('body').hasClass('fp-viewing-3')){$.fn.fullpage.moveTo(1);}else{$.fn.fullpa
 $(document).on('click','nav .menu,#fullmenu',function(){
 $('body').toggleClass('fullmenu-active');
 });
+$(document).on('click','.faqcard',function(){
+if($(this).hasClass('active')){$(this).removeClass('active');return false;}
+$('.faqcard').removeClass('active');
+$(this).addClass('active');
+});
 $(document).on('mouseenter','.introbox:not(.oembox)',function(){
 if($(window).width() > 600){
 $('.intro').addClass('hovererded');
@@ -27,7 +32,7 @@ $('.section.products').mousemove(function(event){
 	var allscreenY=($(window).height()/80)/2;
 	var mouseposY=event.pageY/100;
 	var defpxY=allscreenY-mouseposY;
-	$('.section.products .container .product:nth-child(1)').css({'transform':'translate('+(-defpxX/2)+'px,'+(120+(-defpxY/2))+'px)'});
+	$('.section.products .container .product:nth-child(1)').css({'transform':'translate('+(-defpxX/2)+'px,'+(90+(-defpxY/2))+'px)'});
 	$('.section.products .container .product:nth-child(2)').css({'transform':'translate('+(defpxX/4)+'px,'+(defpxY)+'px)'});
 });
 $(".owl-carousel").owlCarousel({

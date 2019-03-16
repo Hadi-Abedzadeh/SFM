@@ -29,7 +29,12 @@
     <script src="/js/jquery.jscroll.min.js"></script>
 
     <script type="text/javascript">
-        $('ul.pagination').hide();
+        //$('ul.pagination').hide();
+		function neueFade() {
+		jQuery('.jscroll-added').delay(1000).animate({
+		 opacity: 1
+		}, 1000);
+		};
         $(function () {
             $('.infinite-scroll').jscroll({
                 autoTrigger: true,
@@ -38,7 +43,8 @@
                 nextSelector: '.pagination li.active + li a',
                 contentSelector: 'div.infinite-scroll',
                 callback: function () {
-                    $('ul.pagination').remove();
+                    //$('ul.pagination').remove();
+					neueFade();
                 }
             });
         });

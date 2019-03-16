@@ -6,7 +6,7 @@
     <div class="container-fluid">
         <div class="sectionheader">
             <h2><span>TICKETING</span> Form</h2>
-            <h3>HOW TELL TO US</h3>
+            <h3>SUPPORT</h3>
         </div>
 
 
