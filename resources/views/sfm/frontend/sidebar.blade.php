@@ -1,5 +1,6 @@
 
 <div class="fixedsection">
+    <div class="fixedsquare"></div>
     <div class="fixedheader"></div>
     <div class="fixedleft"></div>
     <div class="fixedleftplus"></div>
